@@ -105,9 +105,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
             child: TextField(
               controller: _searchController,
               style: TextStyle(
-                fontSize: size.width * 0.04,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.037,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w800,
                 color: Colors.black87,
               ),
               decoration: InputDecoration(
@@ -118,9 +118,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                 disabledBorder: InputBorder.none,
                 contentPadding: EdgeInsets.zero,
                 hintStyle: TextStyle(
-                  fontSize: size.width * 0.03,
-                  fontFamily: "regular",
-                  fontWeight: FontWeight.w400,
+                  fontSize: size.width * 0.027,
+                  fontFamily: "poppin",
+                  fontWeight: FontWeight.w700,
                   color: const Color(0xFFABABAB),
                 ),
               ),
@@ -137,9 +137,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
         Text(
           'Recent chats',
           style: TextStyle(
-            fontSize: size.width * 0.035,
-            fontFamily: "medium",
-            fontWeight: FontWeight.w500,
+            fontSize: size.width * 0.032,
+            fontFamily: "poppin",
+            fontWeight: FontWeight.w800,
             color: Colors.black,
           ),
         ),
@@ -153,9 +153,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
         Text(
           'New message',
           style: TextStyle(
-            fontSize: size.width * 0.032,
-            fontFamily: "regular",
-            fontWeight: FontWeight.w400,
+            fontSize: size.width * 0.029,
+            fontFamily: "poppin",
+            fontWeight: FontWeight.w700,
             color: const Color(0xFF3E8DDD),
           ),
         ),
@@ -247,9 +247,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: size.width * 0.03,
-                            fontFamily: "semibold",
-                            fontWeight: FontWeight.w700,
+                            fontSize: size.width * 0.027,
+                            fontFamily: "montserrat",
+                            fontWeight: FontWeight.w900,
                             color: Colors.black,
                             height: 1.1,
                           ),
@@ -259,9 +259,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                       Text(
                         chat['time'],
                         style: TextStyle(
-                          fontSize: size.width * 0.02,
-                          fontFamily: "regular",
-                          fontWeight: FontWeight.w400,
+                          fontSize: size.width * 0.018,
+                          fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                           color: Colors.black,
                         ),
                       ),
@@ -280,9 +280,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: size.width * 0.023,
-                            fontFamily: "regular",
-                            fontWeight: FontWeight.w400,
+                            fontSize: size.width * 0.02,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w600,
                             color: const Color(0xFF444444),
                             height: 1.1,
                           ),
@@ -301,9 +301,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                             child: Text(
                               '$unreadCount',
                               style: TextStyle(
-                                fontSize: size.width * 0.02,
-                                fontFamily: "medium",
-                                fontWeight: FontWeight.w500,
+                                fontSize: size.width * 0.018,
+                                fontFamily: "poppin",
+                                fontWeight: FontWeight.w600,
                                 color: Colors.white,
                               ),
                             ),
@@ -340,9 +340,9 @@ class _MainchatscreenState extends State<Mainchatscreen> {
               Text(
                 'Chats',
                 style: TextStyle(
-                  fontSize: size.width * 0.065,
-                  fontFamily: "semibold",
-                  fontWeight: FontWeight.w700,
+                  fontSize: size.width * 0.062,
+                  fontFamily: "poppinbold",
+                  fontWeight: FontWeight.w900,
                   color: const Color(0xFF222222),
                   height: 1.1,
                 ),
@@ -362,8 +362,8 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                     child: Text(
                       'No chats found',
                       style: TextStyle(
-                        fontSize: size.width * 0.042,
-                        fontFamily: "regular",
+                        fontSize: size.width * 0.04,
+                        fontFamily: "poppin",
                         color: const Color(0xFF888888),
                       ),
                     ),

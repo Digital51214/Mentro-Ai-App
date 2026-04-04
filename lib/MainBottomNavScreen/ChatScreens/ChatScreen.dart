@@ -175,9 +175,9 @@ class _ChatscreenState extends State<Chatscreen> {
             child: Text(
               'Chloe',
               style: TextStyle(
-                fontSize: size.width * 0.05,
-                fontFamily: 'semibold',
-                fontWeight: FontWeight.w700,
+                fontSize: size.width * 0.047,
+                fontFamily: 'poppinbold',
+                fontWeight: FontWeight.w900,
                 color: _darkText,
               ),
             ),
@@ -295,8 +295,8 @@ class _ChatscreenState extends State<Chatscreen> {
                     Text(
                       msg.quotedSender ?? '',
                       style: TextStyle(
-                        fontSize: size.width * 0.025,
-                        fontFamily: 'semibold',
+                        fontSize: size.width * 0.023,
+                        fontFamily: 'poppin',
                         fontWeight: FontWeight.w600,
                         color: _green,
                       ),
@@ -305,9 +305,9 @@ class _ChatscreenState extends State<Chatscreen> {
                     Text(
                       msg.quotedText!,
                       style: TextStyle(
-                        fontSize: size.width * 0.025,
-                        fontFamily: 'regular',
-                        fontWeight: FontWeight.w400,
+                        fontSize: size.width * 0.023,
+                        fontFamily: 'poppin',
+                        fontWeight: FontWeight.w600,
                         color: _darkText,
                       ),
                     ),
@@ -321,9 +321,9 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.text ?? '',
             style: TextStyle(
-              fontSize: size.width * 0.026,
-              fontFamily: 'regular',
-              fontWeight: FontWeight.w400,
+              fontSize: size.width * 0.024,
+              fontFamily: 'poppin',
+              fontWeight: FontWeight.w600,
               color: _darkText,
             ),
           ),
@@ -331,8 +331,8 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.time,
             style: TextStyle(
-              fontSize: size.width * 0.026,
-              fontFamily: 'regular',
+              fontSize: size.width * 0.024,
+              fontFamily: 'poppin',
               color: _subText,
             ),
           ),
@@ -362,9 +362,9 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.text ?? '',
             style: TextStyle(
-              fontSize: size.width * 0.03,
-              fontFamily: 'regular',
-              fontWeight: FontWeight.w400,
+              fontSize: size.width * 0.027,
+              fontFamily: 'poppin',
+              fontWeight: FontWeight.w600,
               color: Colors.white,
             ),
           ),
@@ -372,8 +372,8 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.time,
             style: TextStyle(
-              fontSize: size.width * 0.026,
-              fontFamily: 'regular',
+              fontSize: size.width * 0.024,
+              fontFamily: 'poppin',
               color: Colors.white70,
             ),
           ),
@@ -439,8 +439,8 @@ class _ChatscreenState extends State<Chatscreen> {
                   durationLabel(),
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: size.width * 0.025,
-                    fontFamily: 'regular',
+                    fontSize: size.width * 0.023,
+                    fontFamily: 'poppin',
                   ),
                 ),
                 SizedBox(width: size.width * 0.025),
@@ -453,9 +453,9 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.time,
             style: TextStyle(
-              fontSize: size.width * 0.026,
+              fontSize: size.width * 0.024,
               color: Colors.white70,
-              fontFamily: 'regular',
+              fontFamily: 'poppin',
             ),
           ),
         ],
@@ -529,16 +529,16 @@ class _ChatscreenState extends State<Chatscreen> {
                     child: TextField(
                       controller: _msgController,
                       style: TextStyle(
-                        fontSize: size.width * 0.038,
-                        fontFamily: 'regular',
+                        fontSize: size.width * 0.036,
+                        fontFamily: 'poppin',
                         color: _darkText,
                       ),
                       decoration: InputDecoration(
                         hintText: 'Search...',
                         hintStyle: TextStyle(
                           color: _subText,
-                          fontSize: size.width * 0.03,
-                          fontFamily: 'regular',
+                          fontSize: size.width * 0.027,
+                          fontFamily: 'poppin',
                         ),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.zero,

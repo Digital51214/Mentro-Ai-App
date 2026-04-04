@@ -178,10 +178,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       'Step ${_currentPage + 1} of $_totalPages',
                       style: TextStyle(
-                        fontSize: size.width * 0.035,
-                        fontFamily: "medium",
+                        fontSize: size.width * 0.033,
+                        fontFamily: "poppin",
                         color: Colors.grey[600],
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     SizedBox(height: size.height * 0.012),
@@ -274,7 +274,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 child: SizedBox(
                   width: double.infinity,
-                  height: 45,
+                  height: size.height*0.058,
                   child: ElevatedButton(
                     onPressed: _nextActive && !_isLoading ? _goToNextPage : null,
                     style: ElevatedButton.styleFrom(
@@ -299,7 +299,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       _isFinalPage ? 'Get Started!' : 'Next',
                       style: TextStyle(
                         fontSize: size.width * 0.03,
-                        fontFamily: "bold",
+                        fontFamily: "poppinbold",
                         fontWeight: FontWeight.w600,
                         color: _nextActive
                             ? Colors.white

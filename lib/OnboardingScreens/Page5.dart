@@ -134,9 +134,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
                 Text(
                   'Select Allergy',
                   style: TextStyle(
-                    fontSize: size.width * 0.05,
-                    fontFamily: "semibold",
-                    fontWeight: FontWeight.w700,
+                    fontSize: size.width * 0.047,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),
                 ),
@@ -156,9 +156,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
                         title: Text(
                           allergy,
                           style: TextStyle(
-                            fontSize: size.width * 0.04,
-                            fontFamily: "medium",
-                            fontWeight: FontWeight.w500,
+                            fontSize: size.width * 0.037,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w900,
                             color: Colors.black87,
                           ),
                         ),
@@ -199,9 +199,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
     return Text(
       'Set Your Preferences',
       style: TextStyle(
-        fontSize: size.width * 0.052,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.05,
+        fontFamily: "montserrat",
+        fontWeight: FontWeight.w900,
         color: Colors.black,
         height: 1.1,
       ),
@@ -212,9 +212,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
     return Text(
       'Customize your experience for better\nsupport',
       style: TextStyle(
-        fontSize: size.width * 0.036,
-        fontFamily: "regular",
-        fontWeight: FontWeight.w400,
+        fontSize: size.width * 0.034,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w700,
         color: const Color(0xFF666666),
         height: 1.3,
       ),
@@ -225,9 +225,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.04,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.037,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w900,
         color: Colors.black,
         height: 1.15,
       ),
@@ -280,9 +280,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
               child: Text(
                 item['title'],
                 style: TextStyle(
-                  fontSize: size.width * 0.04,
-                  fontFamily: "semibold",
-                  fontWeight: FontWeight.w600,
+                  fontSize: size.width * 0.037,
+                  fontFamily: "poppin",
+                  fontWeight: FontWeight.w800,
                   color: Colors.black,
                   height: 1.2,
                 ),
@@ -292,9 +292,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
             Text(
               isSelected ? 'Selected' : 'Select',
               style: TextStyle(
-                fontSize: size.width * 0.032,
-                fontFamily: "medium",
-                fontWeight: FontWeight.w500,
+                fontSize: size.width * 0.03,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w800,
                 color: const Color(0xFF3E8DDD),
               ),
             ),
@@ -321,9 +321,9 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
           Text(
             text,
             style: TextStyle(
-              fontSize: size.width * 0.02,
-              fontFamily: "medium",
-              fontWeight: FontWeight.w500,
+              fontSize: size.width * 0.019,
+              fontFamily: "poppin",
+              fontWeight: FontWeight.w800,
               color: Colors.white,
             ),
           ),

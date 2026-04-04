@@ -195,9 +195,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.055,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.052,
+        fontFamily: "montserrat",
+        fontWeight: FontWeight.w900,
         color: Colors.black,
         height: 1.1,
       ),
@@ -208,9 +208,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.035,
-        fontFamily: "regular",
-        fontWeight: FontWeight.w400,
+        fontSize: size.width * 0.032,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w700,
         color: const Color(0xFF666666),
         height: 1.35,
       ),
@@ -228,8 +228,8 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
       child: Text(
         text,
         style: TextStyle(
-          fontSize: size.width * 0.03,
-          fontFamily: "regular",
+          fontSize: size.width * 0.027,
+          fontFamily: "poppin",
           color: Colors.red,
         ),
       ),
@@ -259,17 +259,17 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             keyboardType: keyboardType,
             inputFormatters: inputFormatters,
             style: TextStyle(
-              fontSize: size.width * 0.04,
-              fontFamily: "medium",
-              fontWeight: FontWeight.w500,
+              fontSize: size.width * 0.037,
+              fontFamily: "poppin",
+              fontWeight: FontWeight.w800,
               color: Colors.black87,
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.03,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.028,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
                 color: const Color(0xFF8E8E8E),
               ),
               filled: true,
@@ -336,9 +336,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                 child: Text(
                   hasValue ? value : hint,
                   style: TextStyle(
-                    fontSize: size.width * 0.04,
-                    fontFamily: "medium",
-                    fontWeight: FontWeight.w500,
+                    fontSize: size.width * 0.037,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w800,
                     color: const Color(0xff3B8EDB),
                   ),
                 ),
@@ -354,9 +354,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                       child: Text(
                         item,
                         style: TextStyle(
-                          fontSize: size.width * 0.038,
-                          fontFamily: "medium",
-                          fontWeight: FontWeight.w500,
+                          fontSize: size.width * 0.036,
+                          fontFamily: "poppin",
+                          fontWeight: FontWeight.w800,
                           color: Colors.black87,
                         ),
                       ),
@@ -408,9 +408,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                   child: Text(
                     value ?? hint,
                     style: TextStyle(
-                      fontSize: size.width * 0.04,
-                      fontFamily: "medium",
-                      fontWeight: FontWeight.w500,
+                      fontSize: size.width * 0.037,
+                      fontFamily: "poppin",
+                      fontWeight: FontWeight.w800,
                       color: const Color(0xff3B8EDB),
                     ),
                   ),
@@ -448,17 +448,17 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             style: TextStyle(
-              fontSize: size.width * 0.04,
-              fontFamily: "medium",
-              fontWeight: FontWeight.w500,
+              fontSize: size.width * 0.037,
+              fontFamily: "poppin",
+              fontWeight: FontWeight.w800,
               color: Colors.black87,
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.04,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.038,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
                 color: const Color(0xFF8E8E8E),
               ),
               filled: true,
@@ -493,9 +493,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                         child: Text(
                           item,
                           style: TextStyle(
-                            fontSize: size.width * 0.038,
-                            fontFamily: "medium",
-                            fontWeight: FontWeight.w500,
+                            fontSize: size.width * 0.036,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w800,
                             color: Colors.black87,
                           ),
                         ),
@@ -511,9 +511,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                       Text(
                         unit,
                         style: TextStyle(
-                          fontSize: size.width * 0.030,
-                          fontFamily: "semibold",
-                          fontWeight: FontWeight.w700,
+                          fontSize: size.width * 0.028,
+                          fontFamily: "poppin",
+                          fontWeight: FontWeight.w800,
                           color: const Color(0xff3B8EDB),
                         ),
                       ),

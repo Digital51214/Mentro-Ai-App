@@ -52,9 +52,9 @@ class _Page6State extends State<Page6> with AutomaticKeepAliveClientMixin {
     return Text(
       'Set Your Preferences',
       style: TextStyle(
-        fontSize: size.width * 0.052,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.05,
+        fontFamily: "montserrat",
+        fontWeight: FontWeight.w900,
         color: Colors.black,
         height: 1.1,
       ),
@@ -65,9 +65,9 @@ class _Page6State extends State<Page6> with AutomaticKeepAliveClientMixin {
     return Text(
       'Customize your experience for better\nsupport',
       style: TextStyle(
-        fontSize: size.width * 0.036,
-        fontFamily: "regular",
-        fontWeight: FontWeight.w400,
+        fontSize: size.width * 0.034,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w700,
         color: const Color(0xFF666666),
         height: 1.3,
       ),
@@ -100,9 +100,9 @@ class _Page6State extends State<Page6> with AutomaticKeepAliveClientMixin {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: size.width * 0.032,
-                    fontFamily: "semibold",
-                    fontWeight: FontWeight.w700,
+                    fontSize: size.width * 0.03,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w900,
                     color: Colors.black,
                     height: 1.2,
                   ),
@@ -111,9 +111,9 @@ class _Page6State extends State<Page6> with AutomaticKeepAliveClientMixin {
                 Text(
                   subtitle,
                   style: TextStyle(
-                    fontSize: size.width * 0.024,
-                    fontFamily: "regular",
-                    fontWeight: FontWeight.w400,
+                    fontSize: size.width * 0.022,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w700,
                     color: const Color(0xFF7A7A7A),
                     height: 1.3,
                   ),

@@ -88,9 +88,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       child: Text(
                         'Change',
                         style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "semibold",
-                          fontWeight: FontWeight.w700,
+                          fontSize: 17,
+                          fontFamily: "montserrat",
+                          fontWeight: FontWeight.w900,
                           color: Colors.black,
                           height: 1.1,
                         ),
@@ -128,9 +128,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   child: Text(
                     'Change Password',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: "bold",
-                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: "montserrat",
+                      fontWeight: FontWeight.w900,
                       color: Colors.black,
                     ),
                   ),
@@ -146,8 +146,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _passwordController,
                         obscureText: !_isPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.03,
-                          fontFamily: "regular",
+                          fontSize: size.width * 0.028,
+                          fontFamily: "poppin",
                         ),
                         onChanged: (_) {
                           if (_passwordError != null) {
@@ -158,8 +158,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.025,
-                            fontFamily: "regular",
+                            fontSize: size.width * 0.023,
+                            fontFamily: "poppin",
                           ),
                           filled: true,
                           fillColor: Colors.transparent,
@@ -243,8 +243,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _confirmController,
                         obscureText: !_isConfirmVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.03,
-                          fontFamily: "regular",
+                          fontSize: size.width * 0.027,
+                          fontFamily: "poppin",
                         ),
                         onChanged: (_) {
                           if (_confirmError != null) {
@@ -255,8 +255,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Confirm Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.025,
-                            fontFamily: "regular",
+                            fontSize: size.width * 0.023,
+                            fontFamily: "poppin",
                           ),
                           filled: true,
                           fillColor: Colors.transparent,

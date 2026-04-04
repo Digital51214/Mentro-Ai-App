@@ -107,9 +107,9 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.062,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.06,
+        fontFamily: "montserrat",
+        fontWeight: FontWeight.w900,
         color: const Color(0xFF333333),
         height: 1.15,
       ),
@@ -120,9 +120,9 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.034,
-        fontFamily: "regular",
-        fontWeight: FontWeight.w400,
+        fontSize: size.width * 0.032,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w700,
         color: const Color(0xFF7B7B7B),
         height: 1.4,
       ),
@@ -133,9 +133,9 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.034,
-        fontFamily: "medium",
-        fontWeight: FontWeight.w600,
+        fontSize: size.width * 0.032,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w800,
         color: const Color(0xFF4A4A4A),
       ),
     );
@@ -152,8 +152,8 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
       child: Text(
         text,
         style: TextStyle(
-          fontSize: size.width * 0.03,
-          fontFamily: "regular",
+          fontSize: size.width * 0.027,
+          fontFamily: "poppin",
           color: Colors.red,
         ),
       ),
@@ -181,17 +181,17 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
               FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*'))
             ],
             style: TextStyle(
-              fontSize: size.width * 0.032,
-              fontFamily: "medium",
-              fontWeight: FontWeight.w500,
+              fontSize: size.width * 0.03,
+              fontFamily: "poppin",
+              fontWeight: FontWeight.w800,
               color: Colors.black87,
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.026,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.024,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
                 color: const Color(0xFFB0B0B0),
               ),
               filled: true,
@@ -226,9 +226,9 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
                         child: Text(
                           item,
                           style: TextStyle(
-                            fontSize: size.width * 0.032,
-                            fontFamily: "medium",
-                            fontWeight: FontWeight.w500,
+                            fontSize: size.width * 0.03,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w800,
                             color: Colors.black87,
                           ),
                         ),
@@ -243,9 +243,9 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
                       Text(
                         unit,
                         style: TextStyle(
-                          fontSize: size.width * 0.024,
-                          fontFamily: "semibold",
-                          fontWeight: FontWeight.w700,
+                          fontSize: size.width * 0.023,
+                          fontFamily: "poppin",
+                          fontWeight: FontWeight.w900,
                           color: const Color(0xFF3E8DDD),
                         ),
                       ),

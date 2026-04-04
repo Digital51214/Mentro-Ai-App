@@ -30,6 +30,7 @@ class ElevatedButton1 extends StatelessWidget {
           style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
+            fontFamily: "poppinbold",
             color: Colors.white,
           ),
         ),

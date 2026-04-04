@@ -59,6 +59,7 @@ class _Welcomescreen1State extends State<Welcomescreen1> {
                           style: TextStyle(
                             fontSize: size.width * 0.077,
                             fontWeight: FontWeight.w700,
+                            fontFamily: "montserrat"
                           ),
                           children: const [
                             TextSpan(
@@ -102,6 +103,7 @@ class _Welcomescreen1State extends State<Welcomescreen1> {
                             color: Colors.black87,
                             height: 1.5,
                             fontWeight: FontWeight.w400,
+                            fontFamily: "manrope"
                           ),
                         ),
                       ),
@@ -132,7 +134,8 @@ class _Welcomescreen1State extends State<Welcomescreen1> {
                               'Next',
                               style: TextStyle(
                                 fontSize: size.width * 0.045,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: "poppinbold",
                                 color: Colors.white,
                               ),
                             ),

@@ -7,7 +7,12 @@ import 'package:mentro_ai_app/MainBottomNavScreen/HomeScreen.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/ProfileScreens/MainProfileScreen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
-  const BottomNavigationScreen({super.key});
+  final int initialIndex; // ← ADD THIS
+
+  const BottomNavigationScreen({
+    super.key,
+    this.initialIndex = 0, // ← default Home tab
+  });
 
   @override
   State<BottomNavigationScreen> createState() =>
@@ -15,7 +20,7 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  int selectedIndex = 0;
+  late int selectedIndex;
 
   final List<Widget> screens = const [
     Homescreen(),
@@ -23,6 +28,12 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     Mainchatscreen(),
     Mainprofilescreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = widget.initialIndex; // ← ADD THIS
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -183,9 +194,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                 title,
                 style: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: size.width * 0.034,
-                  fontFamily: "medium",
+                  fontWeight: FontWeight.w900,
+                  fontSize: size.width * 0.032,
+                  fontFamily: "poppinbold",
                 ),
               ),
             ],

@@ -97,7 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         style: TextStyle(
                           fontSize: size.width * 0.06,
                           fontWeight: FontWeight.w700,
-                          fontFamily: "semibold",
+                          fontFamily: "montserrat",
                           color: Colors.black,
                           height: 1.2,
                         ),
@@ -111,9 +111,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: Text(
                         'Welcome Back! Enter Your Account Details',
                         style: TextStyle(
-                          fontSize: size.width * 0.03,
+                          fontSize: size.width * 0.027,
                           fontWeight: FontWeight.w400,
-                          fontFamily: "regular",
+                          fontFamily: "poppin",
                           color: Colors.black87,
                         ),
                       ),
@@ -187,8 +187,8 @@ class _SignInScreenState extends State<SignInScreen> {
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
                 fontSize: size.width * 0.025,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
@@ -267,8 +267,8 @@ class _SignInScreenState extends State<SignInScreen> {
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
                 fontSize: size.width * 0.025,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
@@ -375,9 +375,9 @@ class _SignInScreenState extends State<SignInScreen> {
                 'Remember Me',
                 style: TextStyle(
                   fontSize: size.width * 0.025,
-                  fontFamily: "regular",
+                  fontFamily: "poppin",
                   color: Colors.black,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
@@ -397,9 +397,9 @@ class _SignInScreenState extends State<SignInScreen> {
             'Forget Password?',
             style: TextStyle(
               fontSize: size.width * 0.025,
-              fontFamily: "semibold",
+              fontFamily: "poppin",
               color: const Color(0xff3A8DD9),
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
               decoration: TextDecoration.underline,
               decorationColor: const Color(0xff3A8DD9),
             ),
@@ -419,9 +419,9 @@ class _SignInScreenState extends State<SignInScreen> {
             "Don't have an account? ",
             style: TextStyle(
               fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontFamily: "poppin",
               color: Colors.black,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w700,
             ),
           ),
           GestureDetector(

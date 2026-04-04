@@ -75,9 +75,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 child: Text(
                   'Forget Password',
                   style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: "semibold",
-                    fontWeight: FontWeight.w700,
+                    fontSize: 17,
+                    fontFamily: "montserrat",
+                    fontWeight: FontWeight.w900,
                     color: Colors.black,
                     height: 1.1,
                   ),
@@ -115,9 +115,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Text(
               'Verify Your Identity',
               style: TextStyle(
-                fontSize: 24,
-                fontFamily: "bold",
-                fontWeight: FontWeight.bold,
+                fontSize: 22,
+                fontFamily: "montserrat",
+                fontWeight: FontWeight.w900,
                 color: Colors.black,
               ),
             ),
@@ -128,8 +128,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Text(
               'Enter email to find your account',
               style: TextStyle(
-                fontSize: 14,
-                fontFamily: "regular",
+                fontSize: 13,
+                fontFamily: "poppin",
                 color: Colors.black54,
                 fontWeight: FontWeight.w400,
               ),
@@ -158,8 +158,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     hintText: 'Email Address',
                     hintStyle: TextStyle(
                       color: Colors.grey,
-                      fontSize: size.width * 0.025,
-                      fontFamily: "regular",
+                      fontSize: size.width * 0.023,
+                      fontFamily: "poppin",
                     ),
                     filled: true,
                     fillColor: Colors.transparent,

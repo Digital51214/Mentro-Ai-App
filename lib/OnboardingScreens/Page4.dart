@@ -111,9 +111,9 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.052,
-        fontFamily: "semibold",
-        fontWeight: FontWeight.w700,
+        fontSize: size.width * 0.05,
+        fontFamily: "montserrat",
+        fontWeight: FontWeight.w900,
         color: Colors.black,
         height: 1.1,
       ),
@@ -124,9 +124,9 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
     return Text(
       text,
       style: TextStyle(
-        fontSize: size.width * 0.036,
-        fontFamily: "regular",
-        fontWeight: FontWeight.w400,
+        fontSize: size.width * 0.034,
+        fontFamily: "poppin",
+        fontWeight: FontWeight.w700,
         color: const Color(0xFF666666),
         height: 1.3,
       ),
@@ -144,8 +144,8 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
       child: Text(
         text,
         style: TextStyle(
-          fontSize: size.width * 0.032,
-          fontFamily: "regular",
+          fontSize: size.width * 0.03,
+          fontFamily: "poppin",
           color: Colors.red,
         ),
       ),
@@ -221,9 +221,9 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
                   Text(
                     item['title'] ?? '',
                     style: TextStyle(
-                      fontSize: size.width * 0.030,
-                      fontFamily: "semibold",
-                      fontWeight: FontWeight.w700,
+                      fontSize: size.width * 0.027,
+                      fontFamily: "poppin",
+                      fontWeight: FontWeight.w900,
                       color: Colors.black,
                       height: 1.15,
                     ),
@@ -232,9 +232,9 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
                   Text(
                     item['subtitle'] ?? '',
                     style: TextStyle(
-                      fontSize: size.width * 0.025,
-                      fontFamily: "regular",
-                      fontWeight: FontWeight.w400,
+                      fontSize: size.width * 0.023,
+                      fontFamily: "poppin",
+                      fontWeight: FontWeight.w700,
                       color: const Color(0xFF8E8E8E),
                       height: 1.2,
                     ),

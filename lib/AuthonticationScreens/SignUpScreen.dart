@@ -134,7 +134,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(
                           fontSize: size.width * 0.06,
                           fontWeight: FontWeight.w700,
-                          fontFamily: "semibold",
+                          fontFamily: "montserrat",
                           color: Colors.black,
                           height: 1.2,
                         ),
@@ -148,9 +148,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: Text(
                         'Enter Your Details to SignUp',
                         style: TextStyle(
-                          fontSize: size.width * 0.03,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "regular",
+                          fontSize: size.width * 0.027,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "poppin",
                           color: Colors.black87,
                         ),
                       ),
@@ -227,8 +227,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _nameController,
             keyboardType: TextInputType.name,
             style: TextStyle(
-              fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontSize: size.width * 0.033,
+              fontFamily: "poppin",
               color: Colors.black,
             ),
             onChanged: (_) {
@@ -242,9 +242,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Username...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.023,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
@@ -311,8 +311,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontSize: size.width * 0.033,
+              fontFamily: "poppin",
               color: Colors.black,
             ),
             onChanged: (_) {
@@ -326,9 +326,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Email Address...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
-                fontFamily: "regular",
-                fontWeight: FontWeight.w400,
+                fontSize: size.width * 0.023,
+                fontFamily: "poppin",
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
@@ -397,8 +397,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _passwordController,
             obscureText: !_isPasswordVisible,
             style: TextStyle(
-              fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontSize: size.width * 0.033,
+              fontFamily: "poppin",
               color: Colors.black,
             ),
             onChanged: (_) {
@@ -412,8 +412,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
-                fontFamily: "regular",
+                fontSize: size.width * 0.023,
+                fontFamily: "poppin",
                 fontWeight: FontWeight.w400,
               ),
               filled: true,
@@ -495,8 +495,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _confirmPasswordController,
             obscureText: !_isConfirmPasswordVisible,
             style: TextStyle(
-              fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontSize: size.width * 0.033,
+              fontFamily: "poppin",
               color: Colors.black,
             ),
             onChanged: (_) {
@@ -510,8 +510,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Confirm Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
-                fontFamily: "regular",
+                fontSize: size.width * 0.023,
+                fontFamily: "poppin",
                 fontWeight: FontWeight.w400,
               ),
               filled: true,
@@ -623,10 +623,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Text(
                 'I agree with all ',
                 style: TextStyle(
-                  fontSize: size.width * 0.022,
-                  fontFamily: "regular",
+                  fontSize: size.width * 0.021,
+                  fontFamily: "inter",
                   color: Colors.black,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               GestureDetector(
@@ -641,10 +641,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Text(
                   'Terms & Conditions',
                   style: TextStyle(
-                    fontSize: size.width * 0.023,
-                    fontFamily: "bold",
+                    fontSize: size.width * 0.0215,
+                    fontFamily: "inter",
                     color: const Color(0xff3A8DD9),
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w900,
                     decoration: TextDecoration.underline,
                     decorationColor: const Color(0xff3A8DD9),
                   ),
@@ -654,9 +654,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ' and ',
                 style: TextStyle(
                   fontSize: size.width * 0.022,
-                  fontFamily: "regular",
+                  fontFamily: "inter",
                   color: Colors.black,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               GestureDetector(
@@ -671,10 +671,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Text(
                   'Privacy Policy',
                   style: TextStyle(
-                    fontSize: size.width * 0.023,
-                    fontFamily: "bold",
+                    fontSize: size.width * 0.0215,
+                    fontFamily: "inter",
                     color: const Color(0xff3A8DD9),
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w900,
                     decoration: TextDecoration.underline,
                     decorationColor: const Color(0xff3A8DD9),
                   ),
@@ -695,10 +695,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           Text(
             'Already have an account? ',
             style: TextStyle(
-              fontSize: size.width * 0.035,
-              fontFamily: "regular",
+              fontSize: size.width * 0.033,
+              fontFamily: "poppin",
               color: Colors.black,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w700,
             ),
           ),
           GestureDetector(
@@ -709,10 +709,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Text(
               'Sign In',
               style: TextStyle(
-                fontSize: size.width * 0.035,
-                fontFamily: "semibold",
+                fontSize: size.width * 0.033,
+                fontFamily: "poppin",
                 color: const Color(0xff3A8DD9),
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w800,
                 decoration: TextDecoration.underline,
                 decorationColor: const Color(0xff3A8DD9),
               ),

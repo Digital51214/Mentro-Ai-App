@@ -92,8 +92,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
             keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.transparent,
-              fontSize: 18,
-              fontFamily: "semibold",
+              fontSize: 17,
+              fontFamily: "poppinbold",
               fontWeight: FontWeight.w700,
             ),
             cursorColor: const Color(0xff3A8DD9),
@@ -188,9 +188,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
                       child: Text(
                         'Verify',
                         style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "semibold",
-                          fontWeight: FontWeight.w700,
+                          fontSize: 17,
+                          fontFamily: "montserrat",
+                          fontWeight: FontWeight.w900,
                           color: Colors.black,
                           height: 1.1,
                         ),
@@ -228,9 +228,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   child: Text(
                     'Enter Code',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: "bold",
-                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: "montserrat",
+                      fontWeight: FontWeight.w900,
                       color: Colors.black,
                     ),
                   ),
@@ -241,10 +241,10 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   child: Text(
                     'Enter code to verify your Identity',
                     style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "regular",
+                      fontSize: 13,
+                      fontFamily: "poppin",
                       color: Colors.black54,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
@@ -266,7 +266,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           style: const TextStyle(
                             color: Colors.red,
                             fontSize: 11,
-                            fontFamily: "regular",
+                            fontFamily: "poppin",
                           ),
                         ),
                       ),

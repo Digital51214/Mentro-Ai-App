@@ -46,7 +46,7 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                       /// Top image
                       Image.asset(
                         'assets/images/welcomescreen2image.png',
-                        width: size.width * 0.78,
+                        width: size.width * 0.79,
                         fit: BoxFit.contain,
                       ),
 
@@ -58,7 +58,8 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                         text: TextSpan(
                           style: TextStyle(
                             fontSize: size.width * 0.077,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w900,
+                            fontFamily: "montserrat"
                           ),
                           children: const [
                             TextSpan(
@@ -82,12 +83,13 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: size.width * 0.066,
-                          fontWeight: FontWeight.w700,
+                          fontFamily: "montserrat",
+                          fontWeight: FontWeight.w900,
                           color: Colors.black,
                         ),
                       ),
 
-                      SizedBox(height: size.height * 0.015),
+                      SizedBox(height: size.height * 0.016),
 
                       /// Subtitle
                       Padding(
@@ -100,13 +102,14 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                           style: TextStyle(
                             fontSize: size.width * 0.035,
                             color: Colors.black87,
+                            fontFamily: "manrope",
                             height: 1.5,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
 
-                      SizedBox(height: size.height * 0.025),
+                      SizedBox(height: size.height * 0.026),
 
                       /// Next button
                       Padding(
@@ -132,7 +135,8 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                               'Next',
                               style: TextStyle(
                                 fontSize: size.width * 0.045,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: "poppinbold",
                                 color: Colors.white,
                               ),
                             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentro_ai_app/OtherPresentationScreen/NotificationScreen.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -100,9 +101,9 @@ class _HomescreenState extends State<Homescreen> {
               Text(
                 'Welcome',
                 style: TextStyle(
-                  fontSize: size.width * 0.035,
-                  fontFamily: "regular",
-                  fontWeight: FontWeight.w400,
+                  fontSize: size.width * 0.033,
+                  fontFamily: "poppin",
+                  fontWeight: FontWeight.w700,
                   color: const Color(0xFF2D2D2D),
                   height: 1.1,
                 ),
@@ -111,9 +112,9 @@ class _HomescreenState extends State<Homescreen> {
               Text(
                 'Henry wick!',
                 style: TextStyle(
-                  fontSize: size.width * 0.055,
-                  fontFamily: "semibold",
-                  fontWeight: FontWeight.w700,
+                  fontSize: size.width * 0.052,
+                  fontFamily: "montserrat",
+                  fontWeight: FontWeight.w900,
                   color: const Color(0xFF222222),
                   height: 1.1,
                 ),
@@ -121,17 +122,22 @@ class _HomescreenState extends State<Homescreen> {
             ],
           ),
         ),
-        Container(
-          width: size.width * 0.135,
-          height: size.width * 0.135,
-          decoration: const BoxDecoration(
-            color: Color(0xFFE9F1FA),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.notifications,
-            color: const Color(0xFF3E8DDD),
-            size: size.width * 0.075,
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Notificationscreen()));
+          },
+          child: Container(
+            width: size.width * 0.135,
+            height: size.width * 0.135,
+            decoration: const BoxDecoration(
+              color: Color(0xFFE9F1FA),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              Icons.notifications,
+              color: const Color(0xFF3E8DDD),
+              size: size.width * 0.075,
+            ),
           ),
         ),
       ],
@@ -201,22 +207,22 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['title']!,
                   style: TextStyle(
-                    fontSize: size.width * 0.038,
-                    fontFamily: "semibold",
-                    fontWeight: FontWeight.w700,
+                    fontSize: size.width * 0.037,
+                    fontFamily: "montserrat",
+                    fontWeight: FontWeight.w900,
                     color: Colors.black,
                     height: 1.15,
                   ),
                 ),
                 SizedBox(height: size.height * 0.01),
                 SizedBox(
-                  width: size.width * 0.34,
+                  width: size.width * 0.4,
                   child: Text(
                     item['subtitle']!,
                     style: TextStyle(
-                      fontSize: size.width * 0.025,
-                      fontFamily: "regular",
-                      fontWeight: FontWeight.w400,
+                      fontSize: size.width * 0.022,
+                      fontFamily: "poppin",
+                      fontWeight: FontWeight.w700,
                       color: const Color(0xFF2E2E2E),
                       height: 1.25,
                     ),
@@ -246,9 +252,9 @@ class _HomescreenState extends State<Homescreen> {
                       Text(
                         item['buttonText']!,
                         style: TextStyle(
-                          fontSize: size.width * 0.025,
-                          fontFamily: "semibold",
-                          fontWeight: FontWeight.w600,
+                          fontSize: size.width * 0.023,
+                          fontFamily: "poppin",
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
                         ),
                       ),
@@ -296,9 +302,9 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['title'] as String,
                   style: TextStyle(
-                    fontSize: size.width * 0.03,
-                    fontFamily: "medium",
-                    fontWeight: FontWeight.w500,
+                    fontSize: size.width * 0.027,
+                    fontFamily: "montserrat",
+                    fontWeight: FontWeight.w700,
                     color: const Color(0xFF7A7A7A),
                     height: 1.15,
                   ),
@@ -307,9 +313,9 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['subtitle'] as String,
                   style: TextStyle(
-                    fontSize: size.width * 0.025,
-                    fontFamily: "regular",
-                    fontWeight: FontWeight.w400,
+                    fontSize: size.width * 0.022,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w700,
                     color: const Color(0xFF818181),
                     height: 1.15,
                   ),
@@ -376,9 +382,9 @@ class _HomescreenState extends State<Homescreen> {
                 child: Text(
                   'Recent Activity',
                   style: TextStyle(
-                    fontSize: size.width * 0.04,
-                    fontFamily: "semibold",
-                    fontWeight: FontWeight.w700,
+                    fontSize: size.width * 0.037,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w800,
                     color: Colors.black,
                     height: 1.1,
                   ),
