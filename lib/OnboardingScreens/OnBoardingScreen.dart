@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/BottomNavigationScreen.dart';
-import 'package:mentro_ai_app/MainBottomNavScreen/HomeScreen.dart';
 import 'package:mentro_ai_app/OnboardingScreens/Page1.dart';
 import 'package:mentro_ai_app/OnboardingScreens/Page2.dart';
 import 'package:mentro_ai_app/OnboardingScreens/Page3.dart';
@@ -23,21 +22,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final Map<String, dynamic> _onboardingData = {};
 
-  bool _isNextEnabled = false;
   bool _isLoading = false;
   bool _isTransitioning = false;
 
-  final _callbackHolder = _CallbackHolder();
-
   void _goToNextPage() {
-    if (_isTransitioning) return;
+    if (_isTransitioning || _isLoading) return;
 
-    final cb = _callbackHolder.callback;
-    if (cb != null) {
-      cb();
-    } else {
-      _navigateNext();
-    }
+    _navigateNext();
   }
 
   void _navigateNext() {
@@ -59,8 +50,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         });
       });
     } else {
-      // Last page — Get Started
-       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => BottomNavigationScreen()));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => BottomNavigationScreen()),
+      );
     }
   }
 
@@ -68,7 +61,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     if (_isTransitioning) return;
 
     if (_currentPage > 0) {
-      // Agar current page pehla nahi — pichle page par jao
       setState(() => _isTransitioning = true);
 
       _pageController
@@ -84,7 +76,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         });
       });
     } else {
-      // Pehla page hai — login screen par wapas jao
       Navigator.of(context).pop();
     }
   }
@@ -92,24 +83,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void _onPageChanged(int index) {
     setState(() {
       _currentPage = index;
-      _callbackHolder.callback = null;
-      _isNextEnabled = false;
     });
   }
 
-  void _updateNextEnabled(bool enabled) {
-    if (_isNextEnabled != enabled) {
-      setState(() => _isNextEnabled = enabled);
-    }
-  }
+  void _updateNextEnabled(bool enabled) {}
 
   void _updateData(String key, dynamic value) {
     setState(() => _onboardingData[key] = value);
   }
 
-  void _registerNextCallback(VoidCallback callback) {
-    _callbackHolder.callback = callback;
-  }
+  void _registerNextCallback(VoidCallback callback) {}
 
   void _setLoading(bool loading) {
     if (_isLoading != loading) {
@@ -118,7 +101,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   bool get _isFinalPage => _currentPage == _totalPages - 1;
-  bool get _nextActive => _isNextEnabled && !_isTransitioning;
+  bool get _nextActive => !_isTransitioning && !_isLoading;
 
   @override
   void dispose() {
@@ -154,9 +137,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // FIX: onTap mein _goToPreviousPage pass kiya
-                    // Page 1 par: Navigator.pop() — login wapas
-                    // Page 2-6 par: pichla onboarding page
                     CustomBackButton(onTap: _goToPreviousPage),
                     Image.asset(
                       'assets/images/logo.png',
@@ -265,45 +245,60 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
 
-              Padding(
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF3F3F3),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.25),
+                      blurRadius: 12,
+                      offset: const Offset(0, -2),
+                    ),
+                  ],
+                ),
                 padding: EdgeInsets.fromLTRB(
                   size.width * 0.05,
-                  size.height * 0.01,
+                  size.height * 0.02,
                   size.width * 0.05,
-                  size.height * 0.03,
+                  size.height * 0.04,
                 ),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: size.height*0.058,
-                  child: ElevatedButton(
-                    onPressed: _nextActive && !_isLoading ? _goToNextPage : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff3B8EDB),
-                      padding: EdgeInsets.zero,
-                      disabledBackgroundColor: Colors.grey[300],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28),
+                child: Center(
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: size.height * 0.058,
+                    child: ElevatedButton(
+                      onPressed: _nextActive ? _goToNextPage : null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xff3B8EDB),
+                        padding: EdgeInsets.zero,
+                        disabledBackgroundColor: const Color(0xff3B8EDB),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
+                        ),
+                        elevation: 0,
                       ),
-                      elevation: 0,
-                    ),
-                    child: _isLoading
-                        ? const SizedBox(
-                      width: 22,
-                      height: 22,
-                      child: CircularProgressIndicator(
-                        color: Colors.white,
-                        strokeWidth: 2,
-                      ),
-                    )
-                        : Text(
-                      _isFinalPage ? 'Get Started!' : 'Next',
-                      style: TextStyle(
-                        fontSize: size.width * 0.03,
-                        fontFamily: "poppinbold",
-                        fontWeight: FontWeight.w600,
-                        color: _nextActive
-                            ? Colors.white
-                            : Colors.grey[500],
+                      child: _isLoading
+                          ? const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2,
+                        ),
+                      )
+                          : Text(
+                        _isFinalPage ? 'Get Started!' : 'Next',
+                        style: TextStyle(
+                          fontSize: size.width * 0.03,
+                          fontFamily: "poppinbold",
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -315,8 +310,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
-}
-
-class _CallbackHolder {
-  VoidCallback? callback;
 }
