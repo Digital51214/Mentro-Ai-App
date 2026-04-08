@@ -135,7 +135,7 @@ class _Page5State extends State<Page5> with AutomaticKeepAliveClientMixin {
                   'Select Allergy',
                   style: TextStyle(
                     fontSize: size.width * 0.047,
-                    fontFamily: "poppin",
+                    fontFamily: "montserrat",
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),

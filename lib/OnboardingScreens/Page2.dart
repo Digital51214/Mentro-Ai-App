@@ -108,7 +108,9 @@ class _Page2State extends State<Page2> with AutomaticKeepAliveClientMixin {
           vertical: size.height * 0.020,
         ),
         decoration: BoxDecoration(
-          color: const Color(0xFFFDFDFD),
+          color: isSelected
+              ? const Color(0xFF3E8DDD).withOpacity(0.1)
+              : Colors.white,
           borderRadius: BorderRadius.circular(size.width * 0.065),
           border: Border.all(
             color: isSelected
@@ -137,7 +139,7 @@ class _Page2State extends State<Page2> with AutomaticKeepAliveClientMixin {
               child: Text(
                 item['title'],
                 style: TextStyle(
-                  fontSize: size.width * 0.033,
+                  fontSize: size.width * 0.03,
                   fontFamily: "poppin",
                   fontWeight: FontWeight.w800,
                   color: Colors.black,

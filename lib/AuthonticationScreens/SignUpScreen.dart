@@ -86,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         SnackBar(
           content: const Text(
             'Please agree to the Terms & Conditions and Privacy Policy.',
-            style: TextStyle(fontFamily: "regular"),
+            style: TextStyle(fontFamily: "poppin"),
           ),
           backgroundColor: Theme.of(context).colorScheme.error,
           duration: const Duration(seconds: 3),
@@ -250,7 +250,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.02,
+                vertical: size.height * 0.028,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -292,7 +292,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -334,7 +334,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.02,
+                vertical: size.height * 0.028,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -378,7 +378,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -420,7 +420,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.02,
+                vertical: size.height * 0.028,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(
@@ -476,7 +476,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -518,7 +518,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.02,
+                vertical: size.height * 0.028,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(
@@ -576,7 +576,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -624,7 +624,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 'I agree with all ',
                 style: TextStyle(
                   fontSize: size.width * 0.021,
-                  fontFamily: "inter",
+                  fontFamily: "poppin",
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
                 ),
@@ -642,7 +642,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   'Terms & Conditions',
                   style: TextStyle(
                     fontSize: size.width * 0.0215,
-                    fontFamily: "inter",
+                    fontFamily: "poppin",
                     color: const Color(0xff3A8DD9),
                     fontWeight: FontWeight.w900,
                     decoration: TextDecoration.underline,
@@ -654,7 +654,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ' and ',
                 style: TextStyle(
                   fontSize: size.width * 0.022,
-                  fontFamily: "inter",
+                  fontFamily: "poppin",
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
                 ),
@@ -672,7 +672,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   'Privacy Policy',
                   style: TextStyle(
                     fontSize: size.width * 0.0215,
-                    fontFamily: "inter",
+                    fontFamily: "poppin",
                     color: const Color(0xff3A8DD9),
                     fontWeight: FontWeight.w900,
                     decoration: TextDecoration.underline,

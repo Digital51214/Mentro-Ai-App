@@ -129,7 +129,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     'Change Password',
                     style: TextStyle(
                       fontSize: 22,
-                      fontFamily: "montserrat",
+                      fontFamily: "poppin",
                       fontWeight: FontWeight.w900,
                       color: Colors.black,
                     ),
@@ -226,7 +226,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           style: const TextStyle(
                             color: Colors.red,
                             fontSize: 11,
-                            fontFamily: "regular",
+                            fontFamily: "poppin",
                           ),
                         ),
                       ),
@@ -323,7 +323,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           style: const TextStyle(
                             color: Colors.red,
                             fontSize: 11,
-                            fontFamily: "regular",
+                            fontFamily: "poppin",
                           ),
                         ),
                       ),

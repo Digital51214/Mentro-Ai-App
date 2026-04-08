@@ -100,9 +100,9 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                           'Smart support for your mind, meals, and\nskin, all in one place',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: size.width * 0.035,
+                            fontSize: size.width * 0.03,
                             color: Colors.black87,
-                            fontFamily: "manrope",
+                            fontFamily: "poppin",
                             height: 1.5,
                             fontWeight: FontWeight.w400,
                           ),
@@ -134,7 +134,7 @@ class _Welcomescreen2State extends State<Welcomescreen2> {
                             child: Text(
                               'Next',
                               style: TextStyle(
-                                fontSize: size.width * 0.045,
+                                fontSize: size.width * 0.04,
                                 fontWeight: FontWeight.w900,
                                 fontFamily: "poppinbold",
                                 color: Colors.white,

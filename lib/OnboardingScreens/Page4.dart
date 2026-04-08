@@ -170,7 +170,9 @@ class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
           vertical: size.height * 0.022,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isSelected
+              ? const Color(0xFF3E8DDD).withOpacity(0.1)
+              : Colors.white,
           borderRadius: BorderRadius.circular(size.width * 0.06),
           border: Border.all(
             color: isSelected

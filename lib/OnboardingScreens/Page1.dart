@@ -36,6 +36,8 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
   final List<String> _ageUnits = ['Yrs', 'Mon'];
   final List<String> _heightUnits = ['Cm', 'Ft'];
 
+  late final List<String> _countries;
+
   String? _selectedCountry;
   String? _selectedGender;
   String _selectedAgeUnit = 'Yrs';
@@ -54,6 +56,8 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
   void initState() {
     super.initState();
     widget.registerNextCallback(_handleNext);
+
+    _countries = CountryService().getAll().map((country) => country.name).toList();
 
     _nameCtrl.addListener(_validateLive);
     _dobCtrl.addListener(_validateLive);
@@ -99,7 +103,6 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
   Future<void> _handleNext() async {
     FocusScope.of(context).unfocus();
 
-    // ✅ FIX: Pehle check karo bina setState ke
     bool valid = _nameCtrl.text.trim().isNotEmpty &&
         _dobCtrl.text.trim().isNotEmpty &&
         _phoneCtrl.text.trim().isNotEmpty &&
@@ -109,22 +112,27 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
         _heightCtrl.text.trim().isNotEmpty;
 
     if (!valid) {
-      // ✅ Sirf tab errors dikhao jab navigate NAHI karna
       setState(() {
-        _nameError = _nameCtrl.text.trim().isEmpty ? 'Please enter full name' : null;
-        _dobError = _dobCtrl.text.trim().isEmpty ? 'Please select date of birth' : null;
-        _phoneError = _phoneCtrl.text.trim().isEmpty ? 'Please enter phone number' : null;
-        _countryError = _selectedCountry == null ? 'Please select country' : null;
-        _genderError = _selectedGender == null ? 'Please select gender' : null;
+        _nameError =
+        _nameCtrl.text.trim().isEmpty ? 'Please enter full name' : null;
+        _dobError = _dobCtrl.text.trim().isEmpty
+            ? 'Please select date of birth'
+            : null;
+        _phoneError = _phoneCtrl.text.trim().isEmpty
+            ? 'Please enter phone number'
+            : null;
+        _countryError =
+        _selectedCountry == null ? 'Please select country' : null;
+        _genderError =
+        _selectedGender == null ? 'Please select gender' : null;
         _ageError = _ageCtrl.text.trim().isEmpty ? 'Please enter age' : null;
-        _heightError = _heightCtrl.text.trim().isEmpty ? 'Please enter height' : null;
+        _heightError =
+        _heightCtrl.text.trim().isEmpty ? 'Please enter height' : null;
       });
       widget.onNextEnabled(false);
       return;
     }
 
-    // ✅ FIX: Navigate karne se PEHLE errors clear karo
-    // Taaki transition ke dauraan koi red error visible na ho
     setState(() {
       _clearErrors();
     });
@@ -165,30 +173,6 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
 
       widget.onNextEnabled(_isFormValid());
     }
-  }
-
-  void _pickCountry() {
-    FocusScope.of(context).unfocus();
-
-    showCountryPicker(
-      context: context,
-      showPhoneCode: false,
-      countryListTheme: CountryListThemeData(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-        inputDecoration: const InputDecoration(
-          hintText: 'Search country',
-          prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(),
-        ),
-      ),
-      onSelect: (Country country) {
-        setState(() {
-          _selectedCountry = country.name;
-          _countryError = null;
-        });
-        widget.onNextEnabled(_isFormValid());
-      },
-    );
   }
 
   Widget _titleText(String text, Size size) {
@@ -276,7 +260,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
               fillColor: Colors.white,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.05,
-                vertical: size.height * 0.018,
+                vertical: size.height * 0.028,
               ),
               suffixIcon: suffixIcon,
               enabledBorder: OutlineInputBorder(
@@ -381,47 +365,77 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
   Widget _countryField({
     required String? value,
     required String hint,
-    required VoidCallback onTap,
+    required List<String> items,
+    required ValueChanged<String> onSelected,
     required Size size,
     String? errorText,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            height: size.height * 0.058,
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-            decoration: BoxDecoration(
-              color: const Color(0xFFEAF3FB),
-              borderRadius: BorderRadius.circular(size.width * 0.075),
-              border: Border.all(
-                color: errorText != null ? Colors.red : const Color(0xFFD3D3D3),
-                width: 1,
-              ),
+        Container(
+          height: size.height * 0.058,
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+          decoration: BoxDecoration(
+            color: const Color(0xFFEAF3FB),
+            borderRadius: BorderRadius.circular(size.width * 0.075),
+            border: Border.all(
+              color: errorText != null ? Colors.red : const Color(0xFFD3D3D3),
+              width: 1,
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    value ?? hint,
-                    style: TextStyle(
-                      fontSize: size.width * 0.037,
-                      fontFamily: "poppin",
-                      fontWeight: FontWeight.w800,
-                      color: const Color(0xff3B8EDB),
-                    ),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  value ?? hint,
+                  style: TextStyle(
+                    fontSize: size.width * 0.037,
+                    fontFamily: "poppin",
+                    fontWeight: FontWeight.w800,
+                    color: const Color(0xff3B8EDB),
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                Icon(
+              ),
+              PopupMenuButton<String>(
+                color: Colors.white,
+                constraints: BoxConstraints(
+                  minWidth: size.width * 0.89,
+                  maxWidth: size.width * 0.89,
+                  maxHeight: size.height * 0.45,
+                ),
+                onSelected: onSelected,
+                itemBuilder: (context) {
+                  return items
+                      .map(
+                        (item) => PopupMenuItem<String>(
+                      value: item,
+                      child: SizedBox(
+                        width: size.width * 0.78,
+                        child: Text(
+                          item,
+                          style: TextStyle(
+                            fontSize: size.width * 0.036,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w800,
+                            color: Colors.black87,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  )
+                      .toList();
+                },
+                icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
                   color: const Color(0xff3B8EDB),
                   size: size.width * 0.075,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         _errorText(errorText, size),
@@ -560,114 +574,121 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
     final size = MediaQuery.of(context).size;
 
     return LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.055,
-              vertical: size.height * 0.018,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _titleText('Basic Information', size),
-                SizedBox(height: size.height * 0.01),
-                _subtitleText('Please enter basic information', size),
-                SizedBox(height: size.height * 0.03),
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.055,
+            vertical: size.height * 0.018,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _titleText('Basic Information', size),
+              SizedBox(height: size.height * 0.01),
+              _subtitleText('Please enter basic information', size),
+              SizedBox(height: size.height * 0.03),
 
-                _textField(
-                  controller: _nameCtrl,
-                  hint: 'Full Name...',
-                  errorText: _nameError,
-                  size: size,
-                ),
-                SizedBox(height: size.height * 0.012),
+              _textField(
+                controller: _nameCtrl,
+                hint: 'Full Name...',
+                errorText: _nameError,
+                size: size,
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _textField(
-                  controller: _dobCtrl,
-                  hint: 'Date of birth...',
-                  readOnly: true,
-                  onTap: _pickDate,
-                  errorText: _dobError,
-                  size: size,
-                  suffixIcon: IconButton(
-                    onPressed: _pickDate,
-                    icon: Icon(
-                      Icons.calendar_month_outlined,
-                      color: const Color(0xff3B8EDB),
-                      size: size.width * 0.06,
-                    ),
+              _textField(
+                controller: _dobCtrl,
+                hint: 'Date of birth...',
+                readOnly: true,
+                onTap: _pickDate,
+                errorText: _dobError,
+                size: size,
+                suffixIcon: IconButton(
+                  onPressed: _pickDate,
+                  icon: Icon(
+                    Icons.calendar_month_outlined,
+                    color: const Color(0xff3B8EDB),
+                    size: size.width * 0.06,
                   ),
                 ),
-                SizedBox(height: size.height * 0.012),
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _textField(
-                  controller: _phoneCtrl,
-                  hint: 'Phone number....',
-                  keyboardType: TextInputType.phone,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  errorText: _phoneError,
-                  size: size,
-                ),
-                SizedBox(height: size.height * 0.012),
+              _textField(
+                controller: _phoneCtrl,
+                hint: 'Phone number....',
+                keyboardType: TextInputType.phone,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                errorText: _phoneError,
+                size: size,
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _countryField(
-                  value: _selectedCountry,
-                  hint: 'Select Country / Region',
-                  errorText: _countryError,
-                  size: size,
-                  onTap: _pickCountry,
-                ),
-                SizedBox(height: size.height * 0.012),
+              _countryField(
+                value: _selectedCountry,
+                hint: 'Select Country / Region',
+                errorText: _countryError,
+                size: size,
+                items: _countries,
+                onSelected: (value) {
+                  setState(() {
+                    _selectedCountry = value;
+                    _countryError = null;
+                  });
+                  widget.onNextEnabled(_isFormValid());
+                },
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _popupSelectField(
-                  value: _selectedGender ?? '',
-                  hint: 'Gender',
-                  errorText: _genderError,
-                  size: size,
-                  items: _genders,
-                  onSelected: (value) {
-                    setState(() {
-                      _selectedGender = value;
-                      _genderError = null;
-                    });
-                    widget.onNextEnabled(_isFormValid());
-                  },
-                ),
-                SizedBox(height: size.height * 0.012),
+              _popupSelectField(
+                value: _selectedGender ?? '',
+                hint: 'Gender',
+                errorText: _genderError,
+                size: size,
+                items: _genders,
+                onSelected: (value) {
+                  setState(() {
+                    _selectedGender = value;
+                    _genderError = null;
+                  });
+                  widget.onNextEnabled(_isFormValid());
+                },
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _unitField(
-                  controller: _ageCtrl,
-                  hint: 'Age...',
-                  unit: _selectedAgeUnit,
-                  errorText: _ageError,
-                  size: size,
-                  items: _ageUnits,
-                  onSelected: (value) {
-                    setState(() {
-                      _selectedAgeUnit = value;
-                    });
-                  },
-                ),
-                SizedBox(height: size.height * 0.012),
+              _unitField(
+                controller: _ageCtrl,
+                hint: 'Age...',
+                unit: _selectedAgeUnit,
+                errorText: _ageError,
+                size: size,
+                items: _ageUnits,
+                onSelected: (value) {
+                  setState(() {
+                    _selectedAgeUnit = value;
+                  });
+                },
+              ),
+              SizedBox(height: size.height * 0.012),
 
-                _unitField(
-                  controller: _heightCtrl,
-                  hint: 'Height....',
-                  unit: _selectedHeightUnit,
-                  errorText: _heightError,
-                  size: size,
-                  items: _heightUnits,
-                  onSelected: (value) {
-                    setState(() {
-                      _selectedHeightUnit = value;
-                    });
-                  },
-                ),
-                SizedBox(height: size.height * 0.02),
-              ],
-            ),
-          );
-        }
+              _unitField(
+                controller: _heightCtrl,
+                hint: 'Height....',
+                unit: _selectedHeightUnit,
+                errorText: _heightError,
+                size: size,
+                items: _heightUnits,
+                onSelected: (value) {
+                  setState(() {
+                    _selectedHeightUnit = value;
+                  });
+                },
+              ),
+              SizedBox(height: size.height * 0.02),
+            ],
+          ),
+        );
+      },
     );
   }
 }

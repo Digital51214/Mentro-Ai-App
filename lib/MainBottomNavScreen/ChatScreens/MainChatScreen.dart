@@ -81,7 +81,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
     return Container(
       height: size.height * 0.058,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05,),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(size.width * 0.06),
@@ -104,6 +104,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
           Expanded(
             child: TextField(
               controller: _searchController,
+              textAlignVertical: TextAlignVertical.center, // ✅ important
               style: TextStyle(
                 fontSize: size.width * 0.037,
                 fontFamily: "poppin",
@@ -112,6 +113,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
               ),
               decoration: InputDecoration(
                 hintText: 'Search...',
+                isDense: true, // ✅ important (removes extra height)
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -248,7 +250,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: size.width * 0.027,
-                            fontFamily: "montserrat",
+                            fontFamily: "poppin",
                             fontWeight: FontWeight.w900,
                             color: Colors.black,
                             height: 1.1,

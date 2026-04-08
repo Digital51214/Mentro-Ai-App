@@ -147,7 +147,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
             _otpControllers[index].text,
             style: const TextStyle(
               fontSize: 18,
-              fontFamily: "semibold",
+              fontFamily: "poppin",
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
@@ -229,7 +229,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     'Enter Code',
                     style: TextStyle(
                       fontSize: 22,
-                      fontFamily: "montserrat",
+                      fontFamily: "poppin",
                       fontWeight: FontWeight.w900,
                       color: Colors.black,
                     ),

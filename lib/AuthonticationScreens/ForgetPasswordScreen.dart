@@ -116,9 +116,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               'Verify Your Identity',
               style: TextStyle(
                 fontSize: 22,
-                fontFamily: "montserrat",
+                fontFamily: "poppin",
                 fontWeight: FontWeight.w900,
-                color: Colors.black,
+                color: Colors.black
               ),
             ),
           ),
@@ -147,7 +147,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   keyboardType: TextInputType.emailAddress,
                   style: TextStyle(
                     fontSize: size.width * 0.03,
-                    fontFamily: "regular",
+                    fontFamily: "poppin",
                   ),
                   onChanged: (_) {
                     if (_emailError != null) {
@@ -213,7 +213,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     style: const TextStyle(
                       color: Colors.red,
                       fontSize: 11,
-                      fontFamily: "regular",
+                      fontFamily: "poppin",
                     ),
                   ),
                 ),

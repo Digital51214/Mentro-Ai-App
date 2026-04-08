@@ -129,7 +129,7 @@ class _EditprofilescreenState extends State<Editprofilescreen> {
                   style: TextStyle(
                     fontSize: w * 0.046,
                     fontWeight: FontWeight.w900,
-                    fontFamily: "poppin",
+                    fontFamily: "montserrat",
                     color: Colors.black,
                   ),
                 ),

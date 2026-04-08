@@ -147,7 +147,7 @@ class _NotificationscreenState extends State<Notificationscreen> {
                   title,
                   style: TextStyle(
                     fontSize: w * 0.027,
-                    fontFamily: "montserrat",
+                    fontFamily: "poppin",
                     fontWeight: FontWeight.w800,
                     color: Colors.black,
                   ),

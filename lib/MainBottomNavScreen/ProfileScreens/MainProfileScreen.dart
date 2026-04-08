@@ -97,7 +97,7 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
                       style: TextStyle(
                         fontSize: size.width * 0.027,
                         fontWeight: FontWeight.w700,
-                        fontFamily: "poppin",
+                        fontFamily: "poppinbold",
                         color: Colors.white,
                       ),
                     ),

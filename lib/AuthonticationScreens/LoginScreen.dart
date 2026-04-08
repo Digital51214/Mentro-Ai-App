@@ -186,7 +186,7 @@ class _SignInScreenState extends State<SignInScreen> {
               hintText: 'Email Address...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
+                fontSize: size.width * 0.037,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
@@ -194,7 +194,7 @@ class _SignInScreenState extends State<SignInScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.022,
+                vertical: size.height * 0.036,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -238,7 +238,7 @@ class _SignInScreenState extends State<SignInScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -266,15 +266,15 @@ class _SignInScreenState extends State<SignInScreen> {
               hintText: 'Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.025,
+                fontSize: size.width * 0.037,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.04,
-                vertical: size.height * 0.022,
+                horizontal: size.width*0.04,
+                vertical: size.height*0.036,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(
@@ -330,7 +330,7 @@ class _SignInScreenState extends State<SignInScreen> {
               style: TextStyle(
                 color: Colors.red,
                 fontSize: size.width * 0.028,
-                fontFamily: "regular",
+                fontFamily: "poppin",
               ),
             ),
           ),
@@ -433,9 +433,9 @@ class _SignInScreenState extends State<SignInScreen> {
               'Sign Up',
               style: TextStyle(
                 fontSize: size.width * 0.035,
-                fontFamily: "semibold",
+                fontFamily: "poppin",
                 color: const Color(0xff3A8DD9),
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w900,
                 decoration: TextDecoration.underline,
                 decorationColor: const Color(0xff3A8DD9),
               ),
