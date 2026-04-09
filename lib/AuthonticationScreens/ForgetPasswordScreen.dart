@@ -158,7 +158,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     hintText: 'Email Address',
                     hintStyle: TextStyle(
                       color: Colors.grey,
-                      fontSize: size.width * 0.023,
+                      fontSize: size.width * 0.03,
                       fontFamily: "poppin",
                     ),
                     filled: true,

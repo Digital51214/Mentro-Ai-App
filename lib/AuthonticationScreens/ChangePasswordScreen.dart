@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentro_ai_app/AuthonticationScreens/LoginScreen.dart';
+import 'package:mentro_ai_app/OtherPresentationScreen/AccountSettingScreen.dart';
 import 'package:mentro_ai_app/Widgets/Backbutton.dart';
 import 'package:mentro_ai_app/Widgets/ElevatedButton1.dart';
 
@@ -13,53 +13,72 @@ class ChangePasswordScreen extends StatefulWidget {
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmController = TextEditingController();
+  final TextEditingController _oldPasswordController = TextEditingController();
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _confirmNewPasswordController =
+  TextEditingController();
 
-  bool _isPasswordVisible = false;
-  bool _isConfirmVisible = false;
+  bool _isOldPasswordVisible = false;
+  bool _isNewPasswordVisible = false;
+  bool _isConfirmNewPasswordVisible = false;
 
-  String? _passwordError;
-  String? _confirmError;
+  String? _oldPasswordError;
+  String? _newPasswordError;
+  String? _confirmNewPasswordError;
 
   @override
   void dispose() {
-    _passwordController.dispose();
-    _confirmController.dispose();
+    _oldPasswordController.dispose();
+    _newPasswordController.dispose();
+    _confirmNewPasswordController.dispose();
     super.dispose();
   }
 
   void _handleChangePassword() {
     setState(() {
-      _passwordError = null;
-      _confirmError = null;
+      _oldPasswordError = null;
+      _newPasswordError = null;
+      _confirmNewPasswordError = null;
     });
 
     bool isValid = true;
 
-    if (_passwordController.text.trim().isEmpty) {
-      setState(() => _passwordError = 'Please enter password');
+    if (_oldPasswordController.text.trim().isEmpty) {
+      setState(() => _oldPasswordError = 'Please enter old password');
       isValid = false;
-    } else if (_passwordController.text.trim().length < 6) {
-      setState(() => _passwordError = 'Password must be at least 6 characters');
+    } else if (_oldPasswordController.text.trim().length < 6) {
+      setState(
+            () => _oldPasswordError = 'Old password must be at least 6 characters',
+      );
       isValid = false;
     }
 
-    if (_confirmController.text.trim().isEmpty) {
-      setState(() => _confirmError = 'Please confirm password');
+    if (_newPasswordController.text.trim().isEmpty) {
+      setState(() => _newPasswordError = 'Please enter new password');
       isValid = false;
-    } else if (_confirmController.text.trim() !=
-        _passwordController.text.trim()) {
-      setState(() => _confirmError = 'Passwords do not match');
+    } else if (_newPasswordController.text.trim().length < 6) {
+      setState(
+            () => _newPasswordError = 'New password must be at least 6 characters',
+      );
+      isValid = false;
+    }
+
+    if (_confirmNewPasswordController.text.trim().isEmpty) {
+      setState(
+            () => _confirmNewPasswordError = 'Please confirm new password',
+      );
+      isValid = false;
+    } else if (_confirmNewPasswordController.text.trim() !=
+        _newPasswordController.text.trim()) {
+      setState(
+            () => _confirmNewPasswordError = 'Passwords do not match',
+      );
       isValid = false;
     }
 
     if (!isValid) return;
 
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => SignInScreen()),
-    // );
+    // Add your change password API or navigation here
   }
 
   @override
@@ -86,7 +105,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     SizedBox(width: size.width * 0.03),
                     const Expanded(
                       child: Text(
-                        'Change',
+                        'Change Password',
                         style: TextStyle(
                           fontSize: 17,
                           fontFamily: "montserrat",
@@ -136,6 +155,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                 ),
                 SizedBox(height: size.height * 0.01),
+
+                /// Old Password
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -143,19 +164,19 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       height: 45,
                       width: double.infinity,
                       child: TextFormField(
-                        controller: _passwordController,
-                        obscureText: !_isPasswordVisible,
+                        controller: _oldPasswordController,
+                        obscureText: !_isOldPasswordVisible,
                         style: TextStyle(
                           fontSize: size.width * 0.028,
                           fontFamily: "poppin",
                         ),
                         onChanged: (_) {
-                          if (_passwordError != null) {
-                            setState(() => _passwordError = null);
+                          if (_oldPasswordError != null) {
+                            setState(() => _oldPasswordError = null);
                           }
                         },
                         decoration: InputDecoration(
-                          hintText: 'Password...',
+                          hintText: 'Old Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
                             fontSize: size.width * 0.023,
@@ -169,24 +190,23 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
-                              _isPasswordVisible
+                              _isOldPasswordVisible
                                   ? Icons.visibility_off
                                   : Icons.visibility,
                               color: const Color(0xff3A8DD9),
-                              size: size.width*0.055,
+                              size: size.width * 0.055,
                             ),
                             onPressed: () {
                               setState(() {
-                                _isPasswordVisible = !_isPasswordVisible;
+                                _isOldPasswordVisible = !_isOldPasswordVisible;
                               });
                             },
                           ),
-                          errorStyle:
-                          const TextStyle(fontSize: 0, height: 0),
+                          errorStyle: const TextStyle(fontSize: 0, height: 0),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide(
-                              color: _passwordError != null
+                              color: _oldPasswordError != null
                                   ? Colors.red
                                   : Colors.grey.shade300,
                               width: 1,
@@ -195,7 +215,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide(
-                              color: _passwordError != null
+                              color: _oldPasswordError != null
                                   ? Colors.red
                                   : const Color(0xff3A8DD9),
                               width: 1.2,
@@ -219,11 +239,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         validator: (_) => null,
                       ),
                     ),
-                    if (_passwordError != null)
+                    if (_oldPasswordError != null)
                       Padding(
                         padding: const EdgeInsets.only(left: 16, top: 4),
                         child: Text(
-                          _passwordError!,
+                          _oldPasswordError!,
                           style: const TextStyle(
                             color: Colors.red,
                             fontSize: 11,
@@ -233,7 +253,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       ),
                   ],
                 ),
+
                 const SizedBox(height: 5),
+
+                /// New Password
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -241,19 +264,19 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       height: 45,
                       width: double.infinity,
                       child: TextFormField(
-                        controller: _confirmController,
-                        obscureText: !_isConfirmVisible,
+                        controller: _newPasswordController,
+                        obscureText: !_isNewPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.027,
+                          fontSize: size.width * 0.028,
                           fontFamily: "poppin",
                         ),
                         onChanged: (_) {
-                          if (_confirmError != null) {
-                            setState(() => _confirmError = null);
+                          if (_newPasswordError != null) {
+                            setState(() => _newPasswordError = null);
                           }
                         },
                         decoration: InputDecoration(
-                          hintText: 'Confirm Password...',
+                          hintText: 'New Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
                             fontSize: size.width * 0.023,
@@ -267,24 +290,23 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
-                              _isConfirmVisible
+                              _isNewPasswordVisible
                                   ? Icons.visibility_off
                                   : Icons.visibility,
                               color: const Color(0xff3A8DD9),
-                              size: size.width*0.055,
+                              size: size.width * 0.055,
                             ),
                             onPressed: () {
                               setState(() {
-                                _isConfirmVisible = !_isConfirmVisible;
+                                _isNewPasswordVisible = !_isNewPasswordVisible;
                               });
                             },
                           ),
-                          errorStyle:
-                          const TextStyle(fontSize: 0, height: 0),
+                          errorStyle: const TextStyle(fontSize: 0, height: 0),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide(
-                              color: _confirmError != null
+                              color: _newPasswordError != null
                                   ? Colors.red
                                   : Colors.grey.shade300,
                               width: 1,
@@ -293,7 +315,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide(
-                              color: _confirmError != null
+                              color: _newPasswordError != null
                                   ? Colors.red
                                   : const Color(0xff3A8DD9),
                               width: 1.2,
@@ -317,11 +339,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         validator: (_) => null,
                       ),
                     ),
-                    if (_confirmError != null)
+                    if (_newPasswordError != null)
                       Padding(
                         padding: const EdgeInsets.only(left: 16, top: 4),
                         child: Text(
-                          _confirmError!,
+                          _newPasswordError!,
                           style: const TextStyle(
                             color: Colors.red,
                             fontSize: 11,
@@ -331,11 +353,118 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       ),
                   ],
                 ),
+
+                const SizedBox(height: 5),
+
+                /// Confirm New Password
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 45,
+                      width: double.infinity,
+                      child: TextFormField(
+                        controller: _confirmNewPasswordController,
+                        obscureText: !_isConfirmNewPasswordVisible,
+                        style: TextStyle(
+                          fontSize: size.width * 0.027,
+                          fontFamily: "poppin",
+                        ),
+                        onChanged: (_) {
+                          if (_confirmNewPasswordError != null) {
+                            setState(() => _confirmNewPasswordError = null);
+                          }
+                        },
+                        decoration: InputDecoration(
+                          hintText: 'Confirm New Password...',
+                          hintStyle: TextStyle(
+                            color: Colors.grey.shade500,
+                            fontSize: size.width * 0.023,
+                            fontFamily: "poppin",
+                          ),
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 18,
+                            vertical: 12,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isConfirmNewPasswordVisible
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: const Color(0xff3A8DD9),
+                              size: size.width * 0.055,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _isConfirmNewPasswordVisible =
+                                !_isConfirmNewPasswordVisible;
+                              });
+                            },
+                          ),
+                          errorStyle: const TextStyle(fontSize: 0, height: 0),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide(
+                              color: _confirmNewPasswordError != null
+                                  ? Colors.red
+                                  : Colors.grey.shade300,
+                              width: 1,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide(
+                              color: _confirmNewPasswordError != null
+                                  ? Colors.red
+                                  : const Color(0xff3A8DD9),
+                              width: 1.2,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.red,
+                              width: 1,
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.red,
+                              width: 1,
+                            ),
+                          ),
+                        ),
+                        validator: (_) => null,
+                      ),
+                    ),
+                    if (_confirmNewPasswordError != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16, top: 4),
+                        child: Text(
+                          _confirmNewPasswordError!,
+                          style: const TextStyle(
+                            color: Colors.red,
+                            fontSize: 11,
+                            fontFamily: "poppin",
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+
                 SizedBox(height: size.height * 0.04),
-               ElevatedButton1(text: "Change", onPressed: (){
-                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignInScreen()),
-                     (Route<dynamic>route)=>false);
-               }),
+
+                ElevatedButton1(
+                  text: "Change",
+                  // onPressed: _handleChangePassword,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AccountSettingsScreen()));
+                  },
+                ),
+
                 SizedBox(height: size.height * 0.06),
               ],
             ),

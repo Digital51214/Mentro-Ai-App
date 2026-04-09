@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/ChatScreens/MainChatScreen.dart';
-import 'package:mentro_ai_app/MainBottomNavScreen/FoodLoggingScreen.dart';
+import 'package:mentro_ai_app/MainBottomNavScreen/AiCoachScreen.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/HomeScreen.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/ProfileScreens/MainProfileScreen.dart';
 
@@ -24,7 +24,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
   final List<Widget> screens = const [
     Homescreen(),
-    Foodloggingscreen(),
+    Aicoachscreen(),
     Mainchatscreen(),
     Mainprofilescreen(),
   ];
@@ -59,8 +59,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             bottom: 0,
             child: Padding(
               padding: EdgeInsets.only(
-                left: size.width * 0.045,
-                right: size.width * 0.045,
+                left: size.width * 0.080,
+                right: size.width * 0.080,
                 bottom: bottomInset + size.height * 0.012,
               ),
               child: ClipRRect(
@@ -99,7 +99,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                         ),
                         _navItem(
                           image: "assets/images/food.png",
-                          title: "Food",
+                          title: "Ai Coach",
                           index: 1,
                           size: size,
                         ),

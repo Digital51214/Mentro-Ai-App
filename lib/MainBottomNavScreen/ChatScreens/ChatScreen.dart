@@ -295,7 +295,7 @@ class _ChatscreenState extends State<Chatscreen> {
                     Text(
                       msg.quotedSender ?? '',
                       style: TextStyle(
-                        fontSize: size.width * 0.023,
+                        fontSize: size.width * 0.03,
                         fontFamily: 'poppin',
                         fontWeight: FontWeight.w600,
                         color: _green,
@@ -305,7 +305,7 @@ class _ChatscreenState extends State<Chatscreen> {
                     Text(
                       msg.quotedText!,
                       style: TextStyle(
-                        fontSize: size.width * 0.023,
+                        fontSize: size.width * 0.026,
                         fontFamily: 'poppin',
                         fontWeight: FontWeight.w600,
                         color: _darkText,
@@ -321,7 +321,7 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.text ?? '',
             style: TextStyle(
-              fontSize: size.width * 0.024,
+              fontSize: size.width * 0.030,
               fontFamily: 'poppin',
               fontWeight: FontWeight.w600,
               color: _darkText,
@@ -362,7 +362,7 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.text ?? '',
             style: TextStyle(
-              fontSize: size.width * 0.027,
+              fontSize: size.width * 0.032,
               fontFamily: 'poppin',
               fontWeight: FontWeight.w600,
               color: Colors.white,
@@ -372,7 +372,7 @@ class _ChatscreenState extends State<Chatscreen> {
           Text(
             msg.time,
             style: TextStyle(
-              fontSize: size.width * 0.024,
+              fontSize: size.width * 0.027,
               fontFamily: 'poppin',
               color: Colors.white70,
             ),

@@ -626,7 +626,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Text(
                 'I agree with all ',
                 style: TextStyle(
-                  fontSize: size.width * 0.021,
+                  fontSize: size.width * 0.023,
                   fontFamily: "poppin",
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
@@ -644,7 +644,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Text(
                   'Terms & Conditions',
                   style: TextStyle(
-                    fontSize: size.width * 0.0215,
+                    fontSize: size.width * 0.024,
                     fontFamily: "poppin",
                     color: const Color(0xff3A8DD9),
                     fontWeight: FontWeight.w900,
@@ -656,7 +656,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Text(
                 ' and ',
                 style: TextStyle(
-                  fontSize: size.width * 0.022,
+                  fontSize: size.width * 0.023,
                   fontFamily: "poppin",
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
@@ -674,7 +674,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Text(
                   'Privacy Policy',
                   style: TextStyle(
-                    fontSize: size.width * 0.0215,
+                    fontSize: size.width * 0.024,
                     fontFamily: "poppin",
                     color: const Color(0xff3A8DD9),
                     fontWeight: FontWeight.w900,

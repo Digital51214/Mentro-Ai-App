@@ -399,7 +399,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Text(
             'Forget Password?',
             style: TextStyle(
-              fontSize: size.width * 0.025,
+              fontSize: size.width * 0.028,
               fontFamily: "poppin",
               color: const Color(0xff3A8DD9),
               fontWeight: FontWeight.w700,

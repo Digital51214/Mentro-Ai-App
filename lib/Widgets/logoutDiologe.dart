@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mentro_ai_app/AuthonticationScreens/LoginScreen.dart';
 
 class LogoutDialog extends StatelessWidget {
-  const LogoutDialog({super.key});
+  final bool isDelete;
 
-  /// Call this static method to show the dialog from anywhere
-  static Future<void> show(BuildContext context) {
+  const LogoutDialog({super.key, this.isDelete = false});
+
+  static Future<void> show(BuildContext context, {bool isDelete = false}) {
     return showDialog(
       context: context,
-      barrierDismissible: true, // tap outside = cancel
+      barrierDismissible: true,
       barrierColor: Colors.black.withOpacity(0.5),
-      builder: (_) => const LogoutDialog(),
+      builder: (_) => LogoutDialog(isDelete: isDelete),
     );
   }
 
@@ -43,7 +44,7 @@ class LogoutDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // ── Red logout icon circle ─────────────────────────────
+            // ── Icon circle ──
             Container(
               width: w * 0.2,
               height: w * 0.2,
@@ -56,7 +57,7 @@ class LogoutDialog extends StatelessWidget {
                 ),
               ),
               child: Icon(
-                Icons.logout_rounded,
+                isDelete ? Icons.delete_forever_rounded : Icons.logout_rounded,
                 color: Colors.red.shade400,
                 size: w * 0.1,
               ),
@@ -64,9 +65,9 @@ class LogoutDialog extends StatelessWidget {
 
             SizedBox(height: h * 0.025),
 
-            // ── Title ──────────────────────────────────────────────
+            // ── Title ──
             Text(
-              'Logout',
+              isDelete ? 'Delete Account' : 'Logout',
               style: TextStyle(
                 fontSize: w * 0.058,
                 fontWeight: FontWeight.w800,
@@ -77,9 +78,11 @@ class LogoutDialog extends StatelessWidget {
 
             SizedBox(height: h * 0.012),
 
-            // ── Subtitle ───────────────────────────────────────────
+            // ── Subtitle ──
             Text(
-              'Are you sure you want to\nlog out of your account?',
+              isDelete
+                  ? 'Are you sure you want to\ndelete your account? This\ncannot be undone.'
+                  : 'Are you sure you want to\nlog out of your account?',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: w * 0.038,
@@ -91,7 +94,7 @@ class LogoutDialog extends StatelessWidget {
 
             SizedBox(height: h * 0.035),
 
-            // ── Buttons Row ────────────────────────────────────────
+            // ── Buttons Row ──
             Row(
               children: [
                 // Cancel button
@@ -124,18 +127,24 @@ class LogoutDialog extends StatelessWidget {
 
                 SizedBox(width: w * 0.04),
 
-                // Logout button
+                // Confirm button
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignInScreen()),
-                          (Route<dynamic>route)=>false); // close dialog
-                      // Navigate to LoginScreen and remove all previous routes
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        '/login', // <-- your login route name
-                            (route) => false,
-                      );
+                      if (isDelete) {
+                        // TODO: Add delete account logic here
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignInScreen()),
+                              (Route<dynamic> route) => false,
+                        );
+                      } else {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignInScreen()),
+                              (Route<dynamic> route) => false,
+                        );
+                      }
                     },
                     child: Container(
                       height: h * 0.062,
@@ -152,7 +161,7 @@ class LogoutDialog extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          'Logout',
+                          isDelete ? 'Delete' : 'Logout',
                           style: TextStyle(
                             fontSize: w * 0.04,
                             fontWeight: FontWeight.w700,

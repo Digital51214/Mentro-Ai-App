@@ -25,21 +25,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   bool _isLoading = false;
   bool _isTransitioning = false;
 
-  // Track next-enabled state per page
-  final List<bool> _pageNextEnabled = [false, false, false, false, false, true];
-
-  // Store registered next callbacks per page
-  final List<VoidCallback?> _nextCallbacks = [null, null, null, null, null, null];
-
   void _goToNextPage() {
     if (_isTransitioning || _isLoading) return;
-    // Call the current page's registered next callback (handles validation + navigate)
-    final cb = _nextCallbacks[_currentPage];
-    if (cb != null) {
-      cb();
-    } else {
-      _navigateNext();
-    }
+    _navigateNext();
   }
 
   void _navigateNext() {
@@ -97,22 +85,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     });
   }
 
-  // FIX: Now properly updates per-page next state
-  void _updateNextEnabled(bool enabled) {
-    if (_pageNextEnabled[_currentPage] != enabled) {
-      setState(() {
-        _pageNextEnabled[_currentPage] = enabled;
-      });
-    }
-  }
-
   void _updateData(String key, dynamic value) {
     setState(() => _onboardingData[key] = value);
-  }
-
-  // FIX: Store callback against specific page index at registration time
-  void _registerNextCallback(VoidCallback callback) {
-    _nextCallbacks[_currentPage] = callback;
   }
 
   void _setLoading(bool loading) {
@@ -123,9 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   bool get _isFinalPage => _currentPage == _totalPages - 1;
 
-  // FIX: Button active based on per-page state
-  bool get _nextActive =>
-      !_isTransitioning && !_isLoading && _pageNextEnabled[_currentPage];
+  bool get _nextActive => !_isTransitioning && !_isLoading;
 
   @override
   void dispose() {
@@ -224,68 +196,44 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onPageChanged: _onPageChanged,
                   children: [
                     Page1(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[0] != enabled) {
-                          setState(() => _pageNextEnabled[0] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[0] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),
                     Page2(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[1] != enabled) {
-                          setState(() => _pageNextEnabled[1] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[1] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),
                     Page3(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[2] != enabled) {
-                          setState(() => _pageNextEnabled[2] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[2] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),
                     Page4(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[3] != enabled) {
-                          setState(() => _pageNextEnabled[3] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[3] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),
                     Page5(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[4] != enabled) {
-                          setState(() => _pageNextEnabled[4] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[4] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),
                     Page6(
-                      onNextEnabled: (enabled) {
-                        if (_pageNextEnabled[5] != enabled) {
-                          setState(() => _pageNextEnabled[5] = enabled);
-                        }
-                      },
+                      onNextEnabled: (_) {},
                       onDataUpdate: _updateData,
-                      registerNextCallback: (cb) => _nextCallbacks[5] = cb,
+                      registerNextCallback: (_) {},
                       setLoading: _setLoading,
                       navigateNext: _navigateNext,
                     ),

@@ -75,13 +75,13 @@ class _Welcomescreen1State extends State<Welcomescreen1> {
                   /// Subtitle
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.12,
+                      horizontal: size.width * 0.05,
                     ),
                     child: Text(
                       'Smart support for your mind, meals, and\nskin, all in one place',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: size.width * 0.03,
+                        fontSize: size.width * 0.035,
                         color: Colors.black87,
                         height: 1.5,
                         fontWeight: FontWeight.w400,

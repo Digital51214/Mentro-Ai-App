@@ -249,7 +249,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: size.width * 0.027,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
                             fontWeight: FontWeight.w900,
                             color: Colors.black,
@@ -261,7 +261,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                       Text(
                         chat['time'],
                         style: TextStyle(
-                          fontSize: size.width * 0.018,
+                          fontSize: size.width * 0.025,
                           fontFamily: "poppin",
                           fontWeight: FontWeight.w700,
                           color: Colors.black,
@@ -282,7 +282,7 @@ class _MainchatscreenState extends State<Mainchatscreen> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: size.width * 0.02,
+                            fontSize: size.width * 0.023,
                             fontFamily: "poppin",
                             fontWeight: FontWeight.w600,
                             color: const Color(0xFF444444),

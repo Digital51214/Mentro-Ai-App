@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentro_ai_app/OtherPresentationScreen/ChatwithAiscreen.dart';
 import 'package:mentro_ai_app/OtherPresentationScreen/NotificationScreen.dart';
 
 class Homescreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomescreenState extends State<Homescreen> {
     {
       'title': 'Nutrition Support',
       'subtitle': 'Track your meals and get smart food insights',
-      'buttonText': 'Log Food',
+      'buttonText': 'Start Chat',
       'image': 'assets/images/homecontainerimage.png',
     },
     {
@@ -32,19 +33,7 @@ class _HomescreenState extends State<Homescreen> {
     {
       'title': 'Skin Care',
       'subtitle': 'Get personalized support for your skin concerns',
-      'buttonText': 'View Care',
-      'image': 'assets/images/homecontainerimage.png',
-    },
-    {
-      'title': 'Skin Care',
-      'subtitle': 'Get personalized support for your skin concerns',
-      'buttonText': 'View Care',
-      'image': 'assets/images/homecontainerimage.png',
-    },
-    {
-      'title': 'Skin Care',
-      'subtitle': 'Get personalized support for your skin concerns',
-      'buttonText': 'View Care',
+      'buttonText': 'Start Chat',
       'image': 'assets/images/homecontainerimage.png',
     },
   ];
@@ -207,11 +196,12 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['title']!,
                   style: TextStyle(
-                    fontSize: size.width * 0.037,
+                    fontSize: size.width * 0.038,
                     fontFamily: "montserrat",
                     fontWeight: FontWeight.w900,
+                    letterSpacing: 1,
                     color: Colors.black,
-                    height: 1.15,
+                    height: 1.25,
                   ),
                 ),
                 SizedBox(height: size.height * 0.01),
@@ -220,7 +210,7 @@ class _HomescreenState extends State<Homescreen> {
                   child: Text(
                     item['subtitle']!,
                     style: TextStyle(
-                      fontSize: size.width * 0.022,
+                      fontSize: size.width * 0.025,
                       fontFamily: "poppin",
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF2E2E2E),
@@ -229,42 +219,47 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
                 SizedBox(height: size.height * 0.02),
-                Container(
-                  height: 28,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.03,
-                    vertical: size.height * 0.010,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF3E8DDD),
-                    borderRadius: BorderRadius.circular(size.width * 0.08),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xFF3E8DDD).withOpacity(0.25),
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        item['buttonText']!,
-                        style: TextStyle(
-                          fontSize: size.width * 0.023,
-                          fontFamily: "poppin",
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AiNutritionChatScreen()));
+                  },
+                  child: Container(
+                    height: 28,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width * 0.03,
+                      vertical: size.height * 0.01,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF3E8DDD),
+                      borderRadius: BorderRadius.circular(size.width * 0.08),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF3E8DDD).withOpacity(0.25),
+                          blurRadius: 10,
+                          offset: const Offset(0, 3),
                         ),
-                      ),
-                      SizedBox(width: size.width * 0.02),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                        size: size.width * 0.04,
-                      ),
-                    ],
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          item['buttonText']!,
+                          style: TextStyle(
+                            fontSize: size.width * 0.026,
+                            fontFamily: "poppin",
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(width: size.width * 0.02),
+                        Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                          size: size.width * 0.04,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -281,7 +276,7 @@ class _HomescreenState extends State<Homescreen> {
       width: double.infinity,
       padding: EdgeInsets.symmetric(
         horizontal: size.width * 0.06,
-        vertical: size.height * 0.025,
+        vertical: size.height * 0.02,
       ),
       decoration: BoxDecoration(
         color: const Color(0xFFEAF1F8),
@@ -302,7 +297,7 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['title'] as String,
                   style: TextStyle(
-                    fontSize: size.width * 0.027,
+                    fontSize: size.width * 0.035,
                     fontFamily: "montserrat",
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF7A7A7A),
@@ -313,7 +308,7 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   item['subtitle'] as String,
                   style: TextStyle(
-                    fontSize: size.width * 0.022,
+                    fontSize: size.width * 0.026,
                     fontFamily: "poppin",
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF818181),

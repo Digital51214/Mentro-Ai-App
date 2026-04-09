@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/ProfileScreens/EditProfileScreen.dart';
+import 'package:mentro_ai_app/OtherPresentationScreen/AccountSettingScreen.dart';
 import 'package:mentro_ai_app/Widgets/logoutDiologe.dart';
-
-// ── Import your logout dialog ──────────────────────────────────────────────
 
 class Mainprofilescreen extends StatefulWidget {
   const Mainprofilescreen({super.key});
@@ -12,6 +11,8 @@ class Mainprofilescreen extends StatefulWidget {
 }
 
 class _MainprofilescreenState extends State<Mainprofilescreen> {
+  bool _notificationsEnabled = true;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -26,7 +27,6 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
               children: [
                 SizedBox(height: size.height * 0.06),
 
-                // ── Profile Avatar ──
                 Center(
                   child: Container(
                     width: size.width * 0.335,
@@ -53,7 +53,6 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
 
                 SizedBox(height: size.height * 0.014),
 
-                // ── Name ──
                 Text(
                   'Henry wick',
                   style: TextStyle(
@@ -66,7 +65,6 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
 
                 SizedBox(height: size.height * 0.001),
 
-                // ── Email ──
                 Text(
                   'Exmple@mail.com',
                   style: TextStyle(
@@ -78,7 +76,6 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
 
                 SizedBox(height: size.height * 0.02),
 
-                // ── Edit Profile Button ──
                 SizedBox(
                   width: size.width * 0.45,
                   height: size.height * 0.06,
@@ -113,12 +110,14 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
 
                 SizedBox(height: size.height * 0.04),
 
-                // ── Menu Items ──
                 _buildMenuItem(
                   size: size,
                   icon: Icons.person_outline,
                   iconColor: const Color(0xFF2196F3),
                   title: 'Account Settings',
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettingsScreen()));
+                  },
                 ),
 
                 SizedBox(height: size.height * 0.01),
@@ -128,26 +127,87 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
                   icon: Icons.tune,
                   iconColor: const Color(0xFF2196F3),
                   title: 'Preferences',
+                  onTap: () {},
                 ),
 
                 SizedBox(height: size.height * 0.01),
 
-                _buildMenuItem(
-                  size: size,
-                  icon: Icons.notifications_outlined,
-                  iconColor: const Color(0xFF2196F3),
-                  title: 'Notifications Settings',
+                // ── Notification tile with Switch ──
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        _notificationsEnabled = !_notificationsEnabled;
+                      });
+                    },
+                    borderRadius: BorderRadius.circular(14),
+                    child: Container(
+                      width: double.infinity,
+                      height: size.height * 0.074,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.grey.shade200, width: 1.2),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade100,
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: size.width * 0.1,
+                              height: size.width * 0.1,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF2196F3).withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.notifications_outlined,
+                                color: const Color(0xFF2196F3),
+                                size: size.width * 0.055,
+                              ),
+                            ),
+                            SizedBox(width: size.width * 0.04),
+                            Text(
+                              'Notifications Settings',
+                              style: TextStyle(
+                                fontSize: size.width * 0.037,
+                                fontWeight: FontWeight.w800,
+                                fontFamily: "poppin",
+                                color: Colors.black87,
+                              ),
+                            ),
+                            SizedBox(width: size.width * 0.06),
+                            Switch(
+                              value: _notificationsEnabled,
+                              onChanged: (val) {
+                                setState(() {
+                                  _notificationsEnabled = val;
+                                });
+                              },
+                              activeColor: const Color(0xFF2196F3),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
 
                 SizedBox(height: size.height * 0.04),
 
-                // ── Logout Button — only this changed ──────────────
                 SizedBox(
                   width: double.infinity,
                   height: size.height * 0.058,
                   child: OutlinedButton.icon(
                     onPressed: () {
-                      // Show custom logout dialog
                       LogoutDialog.show(context);
                     },
                     icon: Icon(
@@ -187,53 +247,61 @@ class _MainprofilescreenState extends State<Mainprofilescreen> {
     required IconData icon,
     required Color iconColor,
     required String title,
+    required VoidCallback onTap,
   }) {
-    return Container(
-      width: double.infinity,
-      height: size.height * 0.074,
-      decoration: BoxDecoration(
-        color: Colors.white,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.grey.shade200, width: 1.2),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade100,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
+        child: Container(
+          width: double.infinity,
+          height: size.height * 0.074,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: Colors.grey.shade200, width: 1.2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.shade100,
+                blurRadius: 4,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: size.width * 0.045),
-        child: Row(
-          children: [
-            Container(
-              width: size.width * 0.1,
-              height: size.width * 0.1,
-              decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, color: iconColor, size: size.width * 0.055),
-            ),
-            SizedBox(width: size.width * 0.04),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontSize: size.width * 0.037,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: "poppin",
-                  color: Colors.black87,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.045),
+            child: Row(
+              children: [
+                Container(
+                  width: size.width * 0.1,
+                  height: size.width * 0.1,
+                  decoration: BoxDecoration(
+                    color: iconColor.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(icon, color: iconColor, size: size.width * 0.055),
                 ),
-              ),
+                SizedBox(width: size.width * 0.04),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: size.width * 0.037,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: "poppin",
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.grey.shade400,
+                  size: size.width * 0.04,
+                ),
+              ],
             ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.grey.shade400,
-              size: size.width * 0.04,
-            ),
-          ],
+          ),
         ),
       ),
     );
