@@ -320,7 +320,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                 child: Text(
                   hasValue ? value : hint,
                   style: TextStyle(
-                    fontSize: size.width * 0.037,
+                    fontSize: size.width * 0.03,
                     fontFamily: "poppin",
                     fontWeight: FontWeight.w800,
                     color: const Color(0xff3B8EDB),
@@ -391,7 +391,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                 child: Text(
                   value ?? hint,
                   style: TextStyle(
-                    fontSize: size.width * 0.037,
+                    fontSize: size.width * 0.03,
                     fontFamily: "poppin",
                     fontWeight: FontWeight.w800,
                     color: const Color(0xff3B8EDB),
@@ -462,7 +462,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             style: TextStyle(
-              fontSize: size.width * 0.037,
+              fontSize: size.width * 0.03,
               fontFamily: "poppin",
               fontWeight: FontWeight.w800,
               color: Colors.black87,
@@ -470,7 +470,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.038,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
                 color: const Color(0xFF8E8E8E),

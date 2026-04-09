@@ -3,6 +3,7 @@ import 'package:mentro_ai_app/AuthonticationScreens/ForgetPasswordScreen.dart';
 import 'package:mentro_ai_app/AuthonticationScreens/SignUpScreen.dart';
 import 'package:mentro_ai_app/MainBottomNavScreen/BottomNavigationScreen.dart';
 import 'package:mentro_ai_app/OnboardingScreens/OnBoardingScreen.dart';
+import 'package:mentro_ai_app/Widgets/Background2.dart';
 import 'package:mentro_ai_app/Widgets/ElevatedButton1.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -70,77 +71,79 @@ class _SignInScreenState extends State<SignInScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F4F4),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: size.height - topPadding,
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.05,
-                vertical: size.height * 0.01,
+        child: Background2(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: size.height - topPadding,
               ),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    SizedBox(height: size.height * 0.07),
-
-                    _buildTopLogo(size),
-
-                    SizedBox(height: size.height * 0.05),
-
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          fontSize: size.width * 0.06,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "montserrat",
-                          color: Colors.black,
-                          height: 1.2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.05,
+                  vertical: size.height * 0.01,
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: size.height * 0.07),
+          
+                      _buildTopLogo(size),
+          
+                      SizedBox(height: size.height * 0.05),
+          
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(
+                            fontSize: size.width * 0.06,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "montserrat",
+                            color: Colors.black,
+                            height: 1.2,
+                          ),
                         ),
                       ),
-                    ),
-
-                    SizedBox(height: size.height * 0.007),
-
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Welcome Back! Enter Your Account Details',
-                        style: TextStyle(
-                          fontSize: size.width * 0.027,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "poppin",
-                          color: Colors.black87,
+          
+                      SizedBox(height: size.height * 0.007),
+          
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Welcome Back! Enter Your Account Details',
+                          style: TextStyle(
+                            fontSize: size.width * 0.027,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "poppin",
+                            color: Colors.black87,
+                          ),
                         ),
                       ),
-                    ),
-
-                    SizedBox(height: size.height * 0.035),
-
-                    _buildEmailField(size),
-
-                    SizedBox(height: size.height * 0.006),
-
-                    _buildPasswordField(size),
-
-                    SizedBox(height: size.height * 0.018),
-
-                    _buildRememberForgotRow(size),
-
-                    SizedBox(height: size.height * 0.035),
-                    ElevatedButton1(text: "Sign In", onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
-                    }),
-                    SizedBox(height: size.height * 0.13),
-
-                    _buildSignUpPrompt(size),
-
-                    SizedBox(height: size.height * 0.02),
-                  ],
+          
+                      SizedBox(height: size.height * 0.035),
+          
+                      _buildEmailField(size),
+          
+                      SizedBox(height: size.height * 0.006),
+          
+                      _buildPasswordField(size),
+          
+                      SizedBox(height: size.height * 0.018),
+          
+                      _buildRememberForgotRow(size),
+          
+                      SizedBox(height: size.height * 0.035),
+                      ElevatedButton1(text: "Sign In", onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
+                      }),
+                      SizedBox(height: size.height * 0.13),
+          
+                      _buildSignUpPrompt(size),
+          
+                      SizedBox(height: size.height * 0.02),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -186,7 +189,7 @@ class _SignInScreenState extends State<SignInScreen> {
               hintText: 'Email Address...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.037,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
@@ -194,7 +197,7 @@ class _SignInScreenState extends State<SignInScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.036,
+                vertical: size.height * 0.032,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -266,7 +269,7 @@ class _SignInScreenState extends State<SignInScreen> {
               hintText: 'Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.037,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
@@ -274,7 +277,7 @@ class _SignInScreenState extends State<SignInScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width*0.04,
-                vertical: size.height*0.036,
+                vertical: size.height*0.032,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(

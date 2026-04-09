@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mentro_ai_app/AuthonticationScreens/LoginScreen.dart';
 import 'package:mentro_ai_app/AuthonticationScreens/PrivacyPolicyScreen.dart';
 import 'package:mentro_ai_app/AuthonticationScreens/Terms&ConditionScreen.dart';
+import 'package:mentro_ai_app/Widgets/Background2.dart';
 import 'package:mentro_ai_app/Widgets/ElevatedButton1.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -107,90 +108,92 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F4F4),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: size.height - topPadding,
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.05,
-                vertical: size.height * 0.01,
+        child: Background2(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: size.height - topPadding,
               ),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    SizedBox(height: size.height * 0.07),
-
-                    _buildTopLogo(size),
-
-                    SizedBox(height: size.height * 0.05),
-
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: size.width * 0.06,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "montserrat",
-                          color: Colors.black,
-                          height: 1.2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.05,
+                  vertical: size.height * 0.01,
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: size.height * 0.07),
+          
+                      _buildTopLogo(size),
+          
+                      SizedBox(height: size.height * 0.05),
+          
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            fontSize: size.width * 0.06,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "montserrat",
+                            color: Colors.black,
+                            height: 1.2,
+                          ),
                         ),
                       ),
-                    ),
-
-                    SizedBox(height: size.height * 0.007),
-
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Enter Your Details to SignUp',
-                        style: TextStyle(
-                          fontSize: size.width * 0.027,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "poppin",
-                          color: Colors.black87,
+          
+                      SizedBox(height: size.height * 0.007),
+          
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Enter Your Details to SignUp',
+                          style: TextStyle(
+                            fontSize: size.width * 0.027,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "poppin",
+                            color: Colors.black87,
+                          ),
                         ),
                       ),
-                    ),
-
-                    SizedBox(height: size.height * 0.03),
-
-                    _buildNameField(size),
-
-                    SizedBox(height: size.height * 0.006),
-
-                    _buildEmailField(size),
-
-                    SizedBox(height: size.height * 0.006),
-
-                    _buildPasswordField(size),
-
-                    SizedBox(height: size.height * 0.006),
-
-                    _buildConfirmPasswordField(size),
-
-                    SizedBox(height: size.height * 0.01),
-
-                    _buildTermsRow(size),
-
-                    SizedBox(height: size.height * 0.03),
-
-                    ElevatedButton1(text: "Sign Up", onPressed: (){
-                      Navigator.pushAndRemoveUntil(context,
-                      MaterialPageRoute(builder: (context)=>SignInScreen()),
-                          (Route<dynamic>route)=>false
-                      );
-                    }),
-
-                    SizedBox(height: size.height * 0.05),
-
-                    _buildSignInPrompt(size),
-
-                    SizedBox(height: size.height * 0.02),
-                  ],
+          
+                      SizedBox(height: size.height * 0.03),
+          
+                      _buildNameField(size),
+          
+                      SizedBox(height: size.height * 0.006),
+          
+                      _buildEmailField(size),
+          
+                      SizedBox(height: size.height * 0.006),
+          
+                      _buildPasswordField(size),
+          
+                      SizedBox(height: size.height * 0.006),
+          
+                      _buildConfirmPasswordField(size),
+          
+                      SizedBox(height: size.height * 0.01),
+          
+                      _buildTermsRow(size),
+          
+                      SizedBox(height: size.height * 0.03),
+          
+                      ElevatedButton1(text: "Sign Up", onPressed: (){
+                        Navigator.pushAndRemoveUntil(context,
+                        MaterialPageRoute(builder: (context)=>SignInScreen()),
+                            (Route<dynamic>route)=>false
+                        );
+                      }),
+          
+                      SizedBox(height: size.height * 0.05),
+          
+                      _buildSignInPrompt(size),
+          
+                      SizedBox(height: size.height * 0.02),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -227,7 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _nameController,
             keyboardType: TextInputType.name,
             style: TextStyle(
-              fontSize: size.width * 0.033,
+              fontSize: size.width * 0.03,
               fontFamily: "poppin",
               color: Colors.black,
             ),
@@ -242,7 +245,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Username...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.023,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
@@ -250,7 +253,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.028,
+                vertical: size.height * 0.018,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -311,7 +314,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              fontSize: size.width * 0.033,
+              fontSize: size.width * 0.03,
               fontFamily: "poppin",
               color: Colors.black,
             ),
@@ -326,7 +329,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Email Address...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.023,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
               ),
@@ -334,7 +337,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.028,
+                vertical: size.height * 0.016,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               enabledBorder: OutlineInputBorder(
@@ -397,7 +400,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _passwordController,
             obscureText: !_isPasswordVisible,
             style: TextStyle(
-              fontSize: size.width * 0.033,
+              fontSize: size.width * 0.03,
               fontFamily: "poppin",
               color: Colors.black,
             ),
@@ -412,7 +415,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.023,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w400,
               ),
@@ -420,7 +423,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.028,
+                vertical: size.height * 0.016,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(
@@ -495,7 +498,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _confirmPasswordController,
             obscureText: !_isConfirmPasswordVisible,
             style: TextStyle(
-              fontSize: size.width * 0.033,
+              fontSize: size.width * 0.03,
               fontFamily: "poppin",
               color: Colors.black,
             ),
@@ -510,7 +513,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Confirm Password...',
               hintStyle: TextStyle(
                 color: Colors.grey.shade500,
-                fontSize: size.width * 0.023,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w400,
               ),
@@ -518,7 +521,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.04,
-                vertical: size.height * 0.028,
+                vertical: size.height * 0.016,
               ),
               errorStyle: const TextStyle(fontSize: 0, height: 0),
               suffixIcon: IconButton(

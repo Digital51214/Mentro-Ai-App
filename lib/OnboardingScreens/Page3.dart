@@ -189,7 +189,7 @@ class _Page3State extends State<Page3> with AutomaticKeepAliveClientMixin {
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.024,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
                 color: const Color(0xFFB0B0B0),
