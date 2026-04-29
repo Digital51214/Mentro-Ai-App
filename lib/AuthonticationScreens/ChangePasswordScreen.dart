@@ -167,8 +167,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _oldPasswordController,
                         obscureText: !_isOldPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.028,
+                          color: Colors.black87,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                         ),
                         onChanged: (_) {
                           if (_oldPasswordError != null) {
@@ -179,8 +181,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Old Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.023,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
+                            fontWeight: FontWeight.w700,
                           ),
                           filled: true,
                           fillColor: Colors.transparent,
@@ -267,8 +270,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _newPasswordController,
                         obscureText: !_isNewPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.028,
+                          color: Colors.black87,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                         ),
                         onChanged: (_) {
                           if (_newPasswordError != null) {
@@ -279,8 +284,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'New Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.023,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
+                            fontWeight: FontWeight.w700,
                           ),
                           filled: true,
                           fillColor: Colors.transparent,
@@ -367,8 +373,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _confirmNewPasswordController,
                         obscureText: !_isConfirmNewPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.027,
+                          color: Colors.black87,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                         ),
                         onChanged: (_) {
                           if (_confirmNewPasswordError != null) {
@@ -379,8 +387,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Confirm New Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.023,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
+                            fontWeight: FontWeight.w700,
                           ),
                           filled: true,
                           fillColor: Colors.transparent,

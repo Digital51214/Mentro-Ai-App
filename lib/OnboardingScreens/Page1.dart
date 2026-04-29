@@ -243,24 +243,24 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             keyboardType: keyboardType,
             inputFormatters: inputFormatters,
             style: TextStyle(
-              fontSize: size.width * 0.037,
-              fontFamily: "poppin",
-              fontWeight: FontWeight.w800,
               color: Colors.black87,
+              fontSize: size.width * 0.03,
+              fontFamily: "poppin",
+              fontWeight: FontWeight.w700,
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(
-                fontSize: size.width * 0.028,
+                color: Colors.grey.shade500,
+                fontSize: size.width * 0.03,
                 fontFamily: "poppin",
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF8E8E8E),
               ),
               filled: true,
               fillColor: Colors.white,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.05,
-                vertical: size.height * 0.028,
+                vertical: size.height * 0.014,
               ),
               suffixIcon: suffixIcon,
               enabledBorder: OutlineInputBorder(
@@ -322,7 +322,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                   style: TextStyle(
                     fontSize: size.width * 0.03,
                     fontFamily: "poppin",
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: const Color(0xff3B8EDB),
                   ),
                 ),
@@ -338,9 +338,9 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
                       child: Text(
                         item,
                         style: TextStyle(
-                          fontSize: size.width * 0.036,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           color: Colors.black87,
                         ),
                       ),
@@ -464,7 +464,7 @@ class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
             style: TextStyle(
               fontSize: size.width * 0.03,
               fontFamily: "poppin",
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w700,
               color: Colors.black87,
             ),
             decoration: InputDecoration(

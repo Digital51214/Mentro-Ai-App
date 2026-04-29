@@ -157,9 +157,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   decoration: InputDecoration(
                     hintText: 'Email Address',
                     hintStyle: TextStyle(
-                      color: Colors.grey,
+                      color: Colors.grey.shade500,
                       fontSize: size.width * 0.03,
                       fontFamily: "poppin",
+                      fontWeight: FontWeight.w700,
                     ),
                     filled: true,
                     fillColor: Colors.transparent,

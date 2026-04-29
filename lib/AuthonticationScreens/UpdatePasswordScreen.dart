@@ -146,8 +146,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _passwordController,
                         obscureText: !_isPasswordVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.028,
+                          color: Colors.grey.shade500,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                         ),
                         onChanged: (_) {
                           if (_passwordError != null) {
@@ -158,8 +160,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.023,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
+                            fontWeight: FontWeight.w700,
                           ),
                           filled: true,
                           fillColor: Colors.transparent,
@@ -244,8 +247,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         controller: _confirmController,
                         obscureText: !_isConfirmVisible,
                         style: TextStyle(
-                          fontSize: size.width * 0.027,
+                          color: Colors.grey.shade500,
+                          fontSize: size.width * 0.03,
                           fontFamily: "poppin",
+                          fontWeight: FontWeight.w700,
                         ),
                         onChanged: (_) {
                           if (_confirmError != null) {
@@ -256,8 +261,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           hintText: 'Confirm Password...',
                           hintStyle: TextStyle(
                             color: Colors.grey.shade500,
-                            fontSize: size.width * 0.023,
+                            fontSize: size.width * 0.03,
                             fontFamily: "poppin",
+                            fontWeight: FontWeight.w700,
                           ),
                           filled: true,
                           fillColor: Colors.transparent,

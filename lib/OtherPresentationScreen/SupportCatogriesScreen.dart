@@ -127,14 +127,13 @@ class SupportCategoriesScreen extends StatelessWidget {
               ),
             ],
           ),
-          child: Row(
-            children:[ Column(
+          child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: size.width * 0.029,
+                    fontSize: size.width * 0.037,
                     fontWeight: FontWeight.w700,
                     color: Colors.black87,
                     fontFamily: "poppin",
@@ -144,55 +143,57 @@ class SupportCategoriesScreen extends StatelessWidget {
                 Text(
                   subtitle,
                   style: TextStyle(
-                    fontSize: size.width * 0.023,
+                    fontSize: size.width * 0.031,
                     color: Colors.grey.shade600,
                     fontFamily: "poppin",
                     height: 1.5,
                   ),
                 ),
-              ],
-            ),
-              Spacer(),
-              SizedBox(
-                height: size.height * 0.045,
-                child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AiNutritionChatScreen()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF2196F3),
-                    elevation: 0,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.02,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Start Chat',
-                        style: TextStyle(
-                          fontSize: size.width * 0.021,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          fontFamily: "poppinbold",
+                SizedBox(height: size.height * 0.008),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: SizedBox(
+                    height: size.height * 0.045,
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AiNutritionChatScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF2196F3),
+                        elevation: 0,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: size.width * 0.02,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      SizedBox(width: size.width * 0.015),
-                      Icon(
-                        Icons.arrow_forward_rounded,
-                        color: Colors.white,
-                        size: size.width * 0.045,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Start Chat',
+                            style: TextStyle(
+                              fontSize: size.width * 0.021,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              fontFamily: "poppinbold",
+                            ),
+                          ),
+                          SizedBox(width: size.width * 0.015),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            color: Colors.white,
+                            size: size.width * 0.045,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-          ],
-          ),
+              ],
+            ),
+
         ),
       ),
     );

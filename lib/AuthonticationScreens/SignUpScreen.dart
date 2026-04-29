@@ -86,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text(
-            'Please agree to the Terms & Conditions and Privacy Policy.',
+            'Please agree to the Terms & Conditons and Privacy Policy.',
             style: TextStyle(fontFamily: "poppin"),
           ),
           backgroundColor: Theme.of(context).colorScheme.error,
@@ -230,9 +230,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _nameController,
             keyboardType: TextInputType.name,
             style: TextStyle(
+              color: Colors.black,
               fontSize: size.width * 0.03,
               fontFamily: "poppin",
-              color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
             onChanged: (_) {
               if (_nameError != null) {
@@ -314,9 +315,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
+              color: Colors.black,
               fontSize: size.width * 0.03,
               fontFamily: "poppin",
-              color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
             onChanged: (_) {
               if (_emailError != null) {
@@ -400,9 +402,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _passwordController,
             obscureText: !_isPasswordVisible,
             style: TextStyle(
+              color: Colors.black,
               fontSize: size.width * 0.03,
               fontFamily: "poppin",
-              color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
             onChanged: (_) {
               if (_passwordError != null) {
@@ -417,7 +420,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: Colors.grey.shade500,
                 fontSize: size.width * 0.03,
                 fontFamily: "poppin",
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
@@ -498,9 +501,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: _confirmPasswordController,
             obscureText: !_isConfirmPasswordVisible,
             style: TextStyle(
+              color: Colors.grey.shade500,
               fontSize: size.width * 0.03,
               fontFamily: "poppin",
-              color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
             onChanged: (_) {
               if (_confirmPasswordError != null) {
@@ -515,7 +519,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: Colors.grey.shade500,
                 fontSize: size.width * 0.03,
                 fontFamily: "poppin",
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w700,
               ),
               filled: true,
               fillColor: Colors.transparent,
